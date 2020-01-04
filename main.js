@@ -29,7 +29,7 @@ app.post('/upload', (req, res) => {
 
     const flname = crypto.randomBytes(6).toString("hex")
     uploadImg.mv(`images/${flname}.${exte}`)
-    res.send(`https://knot-in.me/${flname}.${exte}`)
+    res.send(`https://{req.hostname}/${flname}.${exte}`)
 })
 
 app.listen("6969", () => console.log("Image server running on port 6969"))
