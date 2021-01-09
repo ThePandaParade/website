@@ -5,14 +5,20 @@ var crypto = require("crypto")
 var filet = require("file-type")
 const readChunk = require('read-chunk');
 const path = require('path');
+const fs = require("fs")
+const rawsubdom = require("./domains.json")
+
 
 app.use(express.static("images"))
 app.use(express.static("static"))
 app.use(efu({safeFileNames: true}))
 
 app.get('/', (req, res) => {
-    if ("images" in req.subdomains) {
+    if (req.subdomains[0] == "images") {
         return res.status(418).send("418: You're a teapot.<br><a href=\"https://nxybi.me/\">You're looking for here</a>")
+    }
+    if (req.hostname == "yiffing.life") {
+        return res.redirect("https://nxybi.me/")
     }
     res.sendFile(path.join(__dirname, "/web/root.html"))
 })
@@ -34,7 +40,7 @@ app.post('/upload', (req, res) => {
 
     const flname = crypto.randomBytes(6).toString("hex")
     uploadImg.mv(`images/${flname}.${exte}`)
-    res.send(`https://images.nxybi.me/${flname}.${exte}`)
+    res.send(`https://the.yiffing.life/${flname}.${exte}`)
 })
 
 app.listen("6969", () => console.log("Image server running on port 6969"))
