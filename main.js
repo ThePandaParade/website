@@ -36,7 +36,7 @@ app.post('/upload', (req, res) => {
     let ogName = uploadImg.name
     const buffer = uploadImg.data.slice(0, filet.minimumBytes); 
 
-    let exte = (await filet.fromBuffer(buffer)).ext
+    let exte = filet(buffer).ext
 
     const flname = crypto.randomBytes(6).toString("hex")
     uploadImg.mv(`images/${flname}.${exte}`)
