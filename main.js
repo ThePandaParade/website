@@ -14,9 +14,9 @@ app.use(express.static("static"))
 app.use(efu({safeFileNames: true}))
 
 app.get('/', (req, res) => {
-    if (req.subdomains[0] || !req.url.startsWith("https://nxybi.me/")) {
+    /* if (req.subdomains[0] || !req.url.startsWith("https://nxybi.me/")) {
         return res.status(418).send()
-    }
+    } */
 
     res.sendFile(path.join(__dirname, "/web/root.html"))
 })
