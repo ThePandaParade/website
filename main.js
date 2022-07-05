@@ -1,13 +1,14 @@
 const express = require("express")
+require('dotenv').config()
 const app = express()
 const efu = require("express-fileupload")
-var crypto = require("crypto")
 var filet = require("file-type")
-const readChunk = require('read-chunk');
 const path = require('path');
-const fs = require("fs")
 const rawsubdom = Object.keys(require("./domains.json"))
 
+if (process.env.MODE == "PRODUCTION" && process.env.MODE == "DEVELOPMENT") {
+    throw new Error("Invalid Proccess Enviorment Mode; Aborting...")
+}
 
 app.use(express.static("images"))
 app.use(express.static("static"))
@@ -36,12 +37,17 @@ app.post('/upload', (req, res) => {
     let exte = filet(buffer).ext
     let chosenDomain = rawsubdom[rawsubdom.length * Math.random() << 0]
     ogName = ogName.replace(exte,"")
-    // const flname = crypto.randomBytes(6).toString("hex")
-    // uploadImg.mv(`images/${flname}.${exte}`)
-    // res.send(`https://the.yiffing.life/${flname}.${exte}`)
     
-    uploadImg.mv(`images/${ogName}.${exte}`)
-    res.send(`https://${chosenDomain}/${ogName}.${exte}`)
+    if (process.env.MODE == "PRODUCTION") {
+        uploadImg.mv(`images/${ogName}.${exte}`)
+        res.send(`https://${chosenDomain}/${ogName}.${exte}`)
+    }
+    else {
+        console.debug("Recieved request to upload image")
+        console.debug(`Image name: ${ogName}`)
+        console.debug(`Image extension: ${exte}`)
+        console.debug(`Image domain: ${chosenDomain}`)
+    }
 })
 
-app.listen("6969", () => console.log("Image server running on port 6969"))
+app.listen(process.env.PORTFOLIO, () => console.log(`Listening to port ${process.env.PORTFOLIO}`))

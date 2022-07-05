@@ -1,0 +1,5 @@
+body html {
+    background: rgb(32,0,36);
+    background: linear-gradient(180deg, rgba(32,0,36,1) 0%, rgba(128,0,144,1) 100%);
+    overflow-y: auto;
+}

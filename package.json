@@ -5,24 +5,31 @@
   "main": "main.js",
   "dependencies": {
     "bulma": "^0.9.0",
+    "dotenv": "^16.0.1",
     "express": "^4.17.1",
     "express-fileupload": "^1.2.0",
+    "fastify": "^4.2.0",
     "file-type": "^12.4.0",
+    "node-fetch": "^2.6.6",
     "path": "^0.12.7",
-    "read-chunk": "^3.2.0"
+    "read-chunk": "^3.2.0",
+    "spotify-web-api-node": "^5.0.2",
+    "twitter-api-v2": "^1.12.3"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "get-spotify-token": "node ./spotify/get-spotify-token.js",
+    "get-twitter-token": "node ./spotify/get-twitter-token.js",
+    "twitter-test": "node ./spotify/twitter.js",
+    "run": "node main.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nxybi/image-server.git"
+    "url": "git+https://github.com/WhenDawnEnds/image-server.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Nxybi/image-server/issues"
+    "url": "https://github.com/WhenDawnEnds/image-server/issues"
   },
-  "homepage": "https://github.com/Nxybi/image-server#readme"
+  "homepage": "https://github.com/WhenDawnEnds/image-server#readme"
 }
