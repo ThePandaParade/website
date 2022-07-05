@@ -10,7 +10,7 @@
     "express-fileupload": "^1.2.0",
     "fastify": "^4.2.0",
     "file-type": "^12.4.0",
-    "node-fetch": "^2.6.6",
+    "node-fetch": "^2.6.7",
     "path": "^0.12.7",
     "read-chunk": "^3.2.0",
     "spotify-web-api-node": "^5.0.2",
