@@ -6,7 +6,7 @@ const fs = require('fs')
 const TwitterFullUrl = `${process.env.TWITTER_REDIRECT_URI}${process.env.TWITTER_REDIRECT_ROUTE}`
 
 const client = new TwitterApi({clientId: process.env.TWITTER_CLIENT_ID, clientSecret: process.env.TWITTER_CLIENT_SECRET, redirectUri: TwitterFullUrl})
-const { url, codeVerifier, state } = client.generateOAuth2AuthLink(`${process.env.TWITTER_REDIRECT_URI}${process.env.TWITTER_REDIRECT_ROUTE}`, { scope: ["tweet.write", "offline.access"] });
+const { url, codeVerifier, sessionState } = client.generateOAuth2AuthLink(`${process.env.TWITTER_REDIRECT_URI}${process.env.TWITTER_REDIRECT_ROUTE}`, { scope: ["tweet.write", "offline.access"] });
 
 
 fastify.get("/" + process.env.TWITTER_REDIRECT_ROUTE, async (request, reply) => {
@@ -14,9 +14,12 @@ fastify.get("/" + process.env.TWITTER_REDIRECT_ROUTE, async (request, reply) => 
     const { code, state } = request.query;
     console.log(`Received code: ${code}`)
     console.log(`Received state: ${state}`)
+    console.log(`Received codeVerifier: ${codeVerifier}`)
+    console.log(`Received sessionState: ${sessionState}`)
 
-    client.v2.loginWithOAuth2({ code, codeVerifier, TwitterFullUrl })
-        .then(async ({ client: loggedClient, accessToken, refreshToken, expiresIn}) => {
+
+    await client.loginWithOAuth2({ code, codeVerifier, TwitterFullUrl })
+        .then(async ({accessToken, refreshToken, expiresIn}) => {
             console.log("Successfully logged in.")
             console.log("Access Token: " + accessToken)
             console.log("Refresh Token: " + refreshToken)
@@ -28,6 +31,11 @@ fastify.get("/" + process.env.TWITTER_REDIRECT_ROUTE, async (request, reply) => 
             console.log("Done.")
             await reply.send("Done.")
             process.exit(0)
+        }).catch(err => {
+          if(err) {
+            console.error("Value passed for the token was invalid.")
+            process.exit(1)
+          }
         })
 })
 

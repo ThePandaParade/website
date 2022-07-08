@@ -2,7 +2,7 @@
 require('dotenv').config()
 const SpotifyWebApi = require('spotify-web-api-node');
 const fs = require('fs');
-//const { TwitterApi } = require('twitter-api-v2');
+const { TwitterApi } = require('twitter-api-v2');
 const fetch = require('node-fetch');
 
 if (!(fs.readFileSync("./spotify/ACCESS_TOKEN")) && !process.env.SKIP_TOKEN_CHECK) {  
@@ -53,7 +53,7 @@ module.exports = async function() {
     if (process.env.MODE == "DEVELOPMENT") {
         console.log("Sending tweet instead of updating bio.")
 
-        await v2Client.tweet("Testing tweet from Twitter.js\n" + final)
+        await v2Client.tweet(`Testing tweet from TwitterApi in Node!\n${final}`)
     }
 }
 
