@@ -22,6 +22,10 @@ app.get('/devices', (req,res) => {
     res.sendFile(path.join(__dirname, "/web/devices.html"))
 })
 
+app.get("/links/onlyfans", (req, res) => {
+    res.send(`<script> window.location.replace("https://www.youtube.com/watch?v=xm3YgoEiEDc") </script>`)
+})
+
 app.post('/upload', (req, res) => {
     if (req.headers.authorization !== process.env.IMAGE_SERVER) {
         return res.status(401).send({'error': true, 'code': 401})
