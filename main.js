@@ -22,6 +22,10 @@ app.get('/devices', (req,res) => {
     res.sendFile(path.join(__dirname, "/web/devices.html"))
 })
 
+app.get("/holidays", (req, res) => {
+    res.sendFile(path.join(__dirname, "/web/holidays.html"))
+})
+
 app.get("/links/onlyfans", (req, res) => {
     res.send(`<script> window.location.replace("https://www.youtube.com/watch?v=xm3YgoEiEDc") </script>`)
 })
