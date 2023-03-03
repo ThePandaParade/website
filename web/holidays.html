@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html style="overflow-y: auto; background: rgb(32,0,36); background: linear-gradient(180deg, rgba(32,0,36,1) 0%, rgb(117, 6, 6) 100%);">
+<html style="overflow-y: auto;" class="background-urgent">
     <head>
         <title>WhenDawnEnds</title>
         <link rel="icon" href="avatar.png">
+        <link rel="stylesheet" href="/background.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.css">
         <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,10 +15,10 @@
         <meta name="theme-color" content="#800075">
     </head>
 
-    <body class="has-background-dark is-overlay" style="overflow-y: auto; background: rgb(32,0,36); background: linear-gradient(180deg, rgba(32,0,36,1) 0%, rgb(117, 6, 6) 100%);">
+    <body class="background-urgent" style="overflow-y: auto;">
         <div class="columns mt-2 mx-1 mb-6">
             <figure class="image is-48x48 column is-1 mt-4">
-                <img src="avatar.png" class="is-rounded is-48x48" width="48" height="48">
+                <img src="avatar.jpg" class="is-rounded is-48x48" width="48" height="48">
             </figure>
             <div class="column is-6 mt-3">
                 <h1 class="has-text-white is-size-1 title">WhenDawnEnds</h1>
@@ -39,13 +40,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>31/01/2023 until 05/02/2023</td>
-                        <td>All Day</td>
-                        <td>Visiting London</td>
+                    <tr> <!-- Strikethrough as this has ended -->
+                        <td><s>01/01/2021 until 31/01/2021</s></td>
+                        <td><s>All Day</s></td>
+                        <td><s>Visiting London</s></td>
                     </tr>
                     <tr>
-                        <td>June 2023</td>
+                        <td>May - June 2023</td>
                         <td>All Month</td>
                         <td>Exam Period</td>
                     </tr>
@@ -55,19 +56,14 @@
                         <td>Holiday to the Canary Islands</td>
                     </tr>
                     <tr>
-                        <td>TBD 2023 (ETA Sept. 2023)</td>
-                        <td>TBD</td>
+                        <td>August 2023</td>
+                        <td>All Month</td>
                         <td>Visiting family in Europe</td>
                     </tr>
                     <tr>
                         <td>TBD 2024 (ETA Mar. 2024)</td>
                         <td>TBD</td>
-                        <td>Holiday to Australia</td>
-                    </tr>
-                    <tr>
-                        <td>TBD 2024 (ETA May. 2024)</td>
-                        <td>TBD</td>
-                        <td>Holiday to New Zealand</td>
+                        <td>Holiday to Pacific</td>
                     </tr>
                     <tr>
                         <td>TBD 2025</td>
@@ -82,7 +78,7 @@
 
     <script>
         // Set the date we're counting down to
-        var countDownDate = new Date("Jan 31, 2023 00:00:00").getTime();
+        var countDownDate = new Date("May 1, 2023 00:00:00").getTime();
 
         // Update the count down every 1 second
         var x = setInterval(function() {
@@ -100,7 +96,7 @@
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Do the same for the expiry date
-        var expiryDate = new Date("Feb 5, 2023 00:00:00").getTime();
+        var expiryDate = new Date("June 31, 2023 00:00:00").getTime();
         var expiryDistance = expiryDate - now;
         var expiryDays = Math.floor(expiryDistance / (1000 * 60 * 60 * 24));
         var expiryHours = Math.floor((expiryDistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));

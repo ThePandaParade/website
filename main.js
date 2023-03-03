@@ -30,6 +30,40 @@ app.get("/links/onlyfans", (req, res) => {
     res.send(`<script> window.location.replace("https://www.youtube.com/watch?v=xm3YgoEiEDc") </script>`)
 })
 
+app.get("/links/twitter", (req, res) => {
+    res.redirect("https://twitter.com/WhenDawnEnds")
+})
+
+app.get("/links/github", (req, res) => {
+    res.redirect("https://github.com/WhenDawnEnds")
+})
+
+app.get("/links/telegram", (req, res) => {
+    res.redirect("https://t.me/WhenDawnEnds")
+})
+
+app.get("/links/patreon", (req, res) => {
+    res.redirect("https://www.patreon.com/robynsnest")
+})
+
+app.get("/links/mastodon", (req, res) => {
+    res.redirect("https://jackelope.gay/@robyndawn")
+})
+
+app.get("/links/projects/frostbyte", (req, res) => {
+    res.redirect("https://frostbyte.jackelope.gay")
+})
+
+app.get("/links/projects/twb", (req, res) => {
+    res.redirect("https://www.youtube.com/channel/UCiXbaS2cQl58NlHl6gWRvqQ")
+})
+
+
+// Bleeding Edge \\
+// Redesign Zone \\
+app.use("/bleeding",require("./web/redesign/redesign.js"))
+
+// Deprecated Zone \\
 app.post('/upload', (req, res) => {
     if (req.headers.authorization !== process.env.IMAGE_SERVER) {
         return res.status(401).send({'error': true, 'code': 401})
