@@ -1,6 +1,112 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <h1> Woah! </h1>
+<html style="overflow-y:auto">
+    <head>
+        <meta charset="utf-8">
+        <title>Robyn-Dawn</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Icon -->
+        <link rel="icon" href="/bleeding/avatar/normal">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Tilt+Neon&display=swap" rel="stylesheet">
+        <!-- Import local files -->
+        <link rel="stylesheet" href="/bleeding/terminal.css">
+        <script src="/bleeding/terminal.js"></script>
+        <!-- Bulma -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+        <!-- FontAwesome (sadly) -->
+        <script src="https://kit.fontawesome.com/c5c07820bb.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="is-overlay dark" id="body">
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns my-2 mx-2">
+                        <figure class="image column is-1 mt-1">
+                            <img src="/bleeding/avatar/transparentAscii" id="avatar">
+                        </figure>
+                        <!-- Vertically align with the center of the image -->
+                        <div class="column is-11 mt-2">
+                            <h1 class="title is-3 gradient-text terminal">Robyn-Dawn</h1>
+                            <h2 class="subtitle is-5 gradient-text terminal">Computer Scientist and Software & Electrical Engineer</h2>
+                            <p class="is-7 gradient-text terminal" id="pronouns">he/they</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <div>
+            <div class="columns my-2 mx-2">
+                <div class="column is-1"></div>
+                <div class="column is-11">
+                    <p class="title is-4 gradient-text terminal" id="about-me">~/about-me.txt</p>
+                    <p class="subtitle is-6 gradient-text terminal">I am a placeholder text! Woah!</p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="columns my-2 mx-2">
+                <div class="column is-1"></div>
+                <div class="column is-11">
+                    <p class="title is-4 gradient-text terminal" id="projects-about">~/projects/about.txt</p>
+                    <p class="subtitle is-6 gradient-text terminal">I am a placeholder text! Woah!</p>
+                    <p class="title is-4 gradient-text terminal" id="projects-frostbyte">~/projects/frostbyte.txt</p>
+                    <p class="subtitle is-6 gradient-text terminal">I am a placeholder text! Woah!</p>
+                    <p class="title is-4 gradient-text terminal" id="projects-theworldsbreak">~/projects/the-worlds-break.txt</p>
+                    <p class="subtitle is-6 gradient-text terminal">I am a placeholder text! Woah!</p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="columns my-2 mx-2">
+                <div class="column is-1"></div>
+                <div class="column is-11">
+                    <p class="title is-4 gradient-text terminal" id="contact-me">~/contact-me.txt</p>
+                    <p class="subtitle is-6 gradient-text terminal">I am a placeholder text! Woah!</p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="columns my-2 mx-2">
+                <div class="column is-1"></div>
+                <div class="column is-11">
+                    <p class="title is-4 gradient-text terminal" id="socials">~/socials.txt</p>
+                    <p class="subtitle is-6 gradient-text terminal">I am a placeholder text! Woah!</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Footer. This should be anchored to the bottom of the page -->
+        <footer class="footer dark" id="footer">
+            <div class="content has-text-centered">
+                <p class="is-7 gradient-text terminal">
+                    <strong id="bleeding-notice">Bleeding edge code. Anything on this page is subject to break, cease existing or change at any time. You have been warned.</strong>
+                </p>
+
+                <!-- A surprisingly not-red button to switch between the Linux style titles and plain English -->
+                <!-- Also do some fancy shit in the JS file to make the background of said button move and grove when switching -->
+                <button class="button dark-gradient is-outlined" id="toggle-linux" onclick="toggleLinux()">
+                    <span class="icon is-small">
+                        <i class="fas fa-terminal" id="toggle-linux-icon"></i>
+                    </span>
+                </button>
+                <!-- And also a light/dark toggle. I'm not evil. -->
+                <button class="button dark-gradient is-outlined" id="toggle-dark" onclick="toggleDark()">
+                    <span class="icon is-small">
+                        <i class="fas fa-moon" id="toggle-dark-icon"></i>
+                    </span>
+                </button>
+
+                <p class="is-7 gradient-text terminal">
+                    See something wrong? <a href="https://github.com/WhenDawnEnds/website"><u>You can contribute to fix it!</u></a> Or <a href="https://github.com/WhenDawnEnds/website/issues/new"><u>report an issue</u></a> if you're not a developer. 
+                </p>
+            </div>
+        </footer>
     </body>
 </html>
