@@ -20,4 +20,30 @@ app.use("/terminal.js", (req, res) => {res.set("Content-Type", "text/javascript"
 // favicon.ico
 app.use("/favicon.ico", (req, res) => {res.set("Content-Type", "image/png"); res.sendFile(path.join(__dirname, "/static/avatarAsciiTransparent.png"));})
 
+// 404 handler
+app.use((req, res, next) => {
+    // Render the 404 page
+    // However, if this is a request to any url with "/error/" in it, then don't redirect to the 404 page
+    // And if this is a request to any url with "/bleeding/" in it, then redirect to /bleeding/error/404/
+    if (req.url.includes("/error/")) {
+        next()
+    } else if (req.url.includes("/bleeding/")) {
+       res.redirect("/bleeding/error/404/")
+    } else {
+        // Until I actually finish the redesign, I'm going to redirect to /bleeding/error/404/
+        res.redirect("/bleeding/error/404/")
+    }
+})
+
+// Error handler
+app.use((err, req, res, next) => {
+    // Render the error page
+    res.redirect("/bleeding/error/" + err.status)
+})
+
+app.get("/error/:status", (req, res) => {
+    res.status(req.params.status)
+    res.sendFile(path.join(__dirname, "/error.html"))
+})
+
 module.exports = app

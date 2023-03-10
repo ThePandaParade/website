@@ -92,4 +92,24 @@ app.post('/upload', (req, res) => {
     }
 })
 
+
+// Start an auto-updating server \\
+
+setTimeout(() => {
+    const { exec } = require("child_process")
+    exec("git pull", (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`)
+            return
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`)
+            return
+        }
+        console.log(`stdout: ${stdout}`)
+    })
+}, 1000)
+
+// Start the server \\
+
 app.listen(process.env.PORTFOLIO, () => console.log(`Listening to port ${process.env.PORTFOLIO}`))

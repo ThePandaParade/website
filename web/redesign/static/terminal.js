@@ -41,6 +41,7 @@ function toggleLinux () {
 function toggleDark() {
     // Toggle the dark mode
     var body = document.getElementById("body")
+    var html = document.getElementById("html")
     var avatar = document.getElementById("avatar")
     var footer = document.getElementById("footer")
     var toggleButton = document.getElementById("toggle-dark")
@@ -50,13 +51,11 @@ function toggleDark() {
     if (body.classList.contains("dark")) {
         // It is enabled, so disable it.
         body.classList.remove("dark")
+        html.classList.remove("dark")
         footer.classList.remove("dark")
         body.classList.add("light")
+        html.classList.add("light")
         footer.classList.add("light")
-        // Set the avatar to the non-transparent ASCII one (only if Linux mode is enabled)
-        if (avatar.src.includes("transparentAscii")) {
-            avatar.src = "/bleeding/avatar/ascii"
-        }
         // TODO - Fancy gradient animation while toggling
 
         toggleButtonIcon.classList.remove("fa-moon")
@@ -64,17 +63,20 @@ function toggleDark() {
     } else {
         // It is disabled, so enable it.
         body.classList.add("dark")
+        html.classList.add("dark")
         footer.classList.add("dark")
         body.classList.remove("light")
+        html.classList.remove("light")
         footer.classList.remove("light")
-        // Set the avatar to the transparent ASCII one (only if Linux mode is enabled)
-        if (avatar.src.includes("transparentAscii")) {
-            avatar.src = "/bleeding/avatar/transparentAscii"
-        }
         // TODO - Fancy gradient animation while toggling
         toggleButtonIcon.classList.remove("fa-sun")
         toggleButtonIcon.classList.add("fa-moon")
     }
 
     // TODO - Light switch noise when toggling
+}
+
+// Auto toggle dark mode if the user has dark mode enabled
+if (window.matchMedia && !(window.matchMedia('(prefers-color-scheme: dark)')).matches) {
+    toggleDark()
 }

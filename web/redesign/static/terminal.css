@@ -3,7 +3,7 @@
 /* I'm not sure if I like it, but I'm going to try it out for a while. */
 
 footer {
-    position:fixed;
+    position:sticky;
     left:0px;
     bottom:0px;
     width: 100%;
@@ -11,10 +11,12 @@ footer {
 
 .dark {
     background-color: #16161D !important; /* Not quite black but apparently its the color you see with no light. There's your fun fact of the day. */
+    background-size: 100% 100%;
 }
 
 .light {
     background-color: #dddddd !important;
+    background-size: 100% 100%;
 }
 
 .gradient-text {
