@@ -106,10 +106,20 @@ setTimeout(() => {
             console.log(`stderr: ${stderr}`)
             return
         }
+        if (stdout == "Already up to date.") {
+            return
+        }
         console.log(`stdout: ${stdout}`)
     })
 }, 1000)
 
 // Start the server \\
 
-app.listen(process.env.PORTFOLIO, () => console.log(`Listening to port ${process.env.PORTFOLIO}`))
+const server = app.listen(process.env.PORTFOLIO, () => console.log(`Listening to port ${process.env.PORTFOLIO}`))
+
+// Graceful Shutdown \\
+process.on('SIGTERM', () => {
+    console.log("Shutting down...")
+    server.close(() => console.log("Closed all connections"))
+    process.exit(0)
+})

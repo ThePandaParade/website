@@ -9,6 +9,10 @@ footer {
     width: 100%;
 }
 
+a {
+    font-weight: bold;
+}
+
 .dark {
     background-color: #16161D !important; /* Not quite black but apparently its the color you see with no light. There's your fun fact of the day. */
     background-size: 100% 100%;

@@ -53,7 +53,9 @@
             status_info = "Something went horribly wrong and the server is now on fire. Please don't do that again. Thanks.";
         } else if (status_code == "418") {
             status_info = "I'm a teapot, here's my handle, here's my spout. When I get all steamed up, hear me shout. Just tip me over and pour me out.<br>Also, just because I'm British doesn't mean I'm a cup of tea. Thanks."
-        } 
+        } else if (status_code == "200") {
+            status_info = "You're not supposed to be here. You're supposed to be on the main page. Go back to the main page. I'm not your mother, but I'm telling you to go back to the main page."
+        }
         else {
             status_info = `Something went wrong, and I don't know what the message is. Sorry.<br><img src=\"https://http.cat/${status_code}\" alt=\"Yeah I dunno, its a cat. Imagine a cat.\">`;
         }
