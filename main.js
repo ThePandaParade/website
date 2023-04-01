@@ -63,6 +63,10 @@ app.get("/links/projects/twb", (req, res) => {
 // Redesign Zone \\
 app.use("/bleeding",require("./web/redesign/redesign.js"))
 
+app.get("/notice/", (req, res) => {
+    res.sendFile(path.join(__dirname, "/web/notice.html"))
+})
+
 // Deprecated Zone \\
 app.post('/upload', (req, res) => {
     if (req.headers.authorization !== process.env.IMAGE_SERVER) {

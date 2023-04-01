@@ -5,7 +5,7 @@
         <title>Robyn-Dawn</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Icon -->
-        <link rel="icon" href="/bleeding/avatar/normal">
+        <link rel="icon" href="/bleeding/art/blankie">
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,13 +60,28 @@
                 <div class="column is-11">
                     <p class="title is-4 gradient-text terminal" id="about-me">~/about-me.txt</p>
                     <p class="subtitle is-6 gradient-text terminal">
-                        Hi! I'm Robyn-Dawn, a passionate computer scientist from Lincolnshire, UK, who loves exploring unique hobbies alongside my studies. My interests include Emergency Alert System (EAS) scenarios, analogue horror, and fire alarms, 
+<!--                         Hi! I'm Robyn-Dawn, a passionate computer scientist from Lincolnshire, UK, who loves exploring unique hobbies alongside my studies. My interests include Emergency Alert System (EAS) scenarios, analogue horror, and fire alarms, 
                         and I enjoy using my programming skills to create simulations of these scenarios. Recently, I have also been learning video editing to bring more life to my simulations and make them even more immersive. My attention to detail 
                         and creativity have helped me create realistic and engaging simulations that stand out from the crowd.<br>
 
                         While my hobbies might seem unusual, they reflect my broader interests in computer science and my eagerness to explore new and exciting areas of the field. I'm highly focused and dedicated to my studies, and I am eager to pursue a 
                         degree in computer science at the University of Essex to further my knowledge and skills. I believe that my unique hobbies and interests give me a unique perspective on the field and enable me to bring fresh ideas and approaches to 
-                        the table.
+                        the table. -->
+                        As someone who grew up in Lincolnshire, I've always been a tinkerer at heart. There's just something fascinating about taking things apart and figuring out how they work. As I got older, I started experimenting with creating my own 
+                        devices and gadgets, always tinkering with various electronics and software to bring my ideas to life.<br><br>
+
+                        One of my passions is creating fictional scenarios inspired by the writings of the SCP Foundation, the strategy game DEFCON, and the simulation game Plague Inc. I also have a deep interest in analog horror, which is a subgenre of 
+                        horror that utilizes vintage and retro technologies like vinyl records, VHS tapes, and old radios. This interest has led me to experiment with incorporating analog elements into my EAS scenarios, creating a more immersive and unsettling 
+                        experience for my viewers.<br><br>
+
+                        Currently, I'm in the process of applying to university to further progress my knowledge in the field of computer science with AI. I'm excited about the potential to learn and grow alongside other passionate individuals in the field.<br>
+                        <br>
+
+                        As a software and electrical engineer, I'm well-versed in a variety of programming languages and electrical systems. I have a talent for taking complex systems and breaking them down into simple, easy-to-understand concepts. 
+                        My ability to work with both software and hardware makes me a valuable asset to any team, and I'm always eager to learn more about the latest technologies and techniques.<br><br>
+
+                        So, while my passion for creating fictional scenarios and analog horror may seem like disparate interests, they both showcase my creativity and problem-solving abilities. I'm always pushing myself to learn and grow, and I'm excited to 
+                        see where my journey takes me next.
                     </p>
                 </div>
             </div>
@@ -75,7 +90,7 @@
         <div>
             <div class="columns my-2 mx-2">
                 <div class="column is-1"></div>
-                <div class="column is-11">
+                <div class="column is-11" style="text-align:right;">
                     <p class="title is-4 gradient-text terminal" id="projects-about">~/projects/about.txt</p>
                     <p class="subtitle is-6 gradient-text terminal">Below are all my active projects. "Active" meaning I am currently working on them.</p>
                     <p class="title is-4 gradient-text terminal" id="projects-frostbyte">~/projects/frostbyte.txt</p>
@@ -119,9 +134,9 @@
         <div>
             <div class="columns my-2 mx-2">
                 <div class="column is-1"></div>
-                <div class="column is-11">
+                <div class="column is-11" style="text-align:center;">
                     <p class="title is-4 gradient-text terminal" id="socials">~/socials.txt</p>
-                    <p class="title is-6 has-text-white"> <!-- Just so they dont try and sue me :p -->
+                    <p class="subtitle is-6 has-text-white"> <!-- Just so they dont try and sue me :p -->
                         <!-- Use FA for icons -->
                         <a href="https://twitter.com/WhenDawnEnds" class="gradient-text" target="_blank">
                             <span class="icon is-small">
@@ -147,7 +162,12 @@
                             </span>
                             @robynsnest
                         </a>
-
+                        <a href="https://t.me/robynsspacestation" class="gradient-text" target="_blank">
+                            <span class="icon is-small">
+                                <i class="fab fa-telegram"></i>
+                            </span>
+                            @robynsspacestation
+                        </a>
                     </p>
                 </div>
             </div>
@@ -159,6 +179,10 @@
             <div class="content has-text-centered">
                 <p class="is-7 gradient-text terminal">
                     <strong id="bleeding-notice">Bleeding edge code. Anything on this page is subject to break, cease existing or change at any time. You have been warned.</strong>
+                </p>
+
+                <p class="is-7 gradient-text terminal">
+                    See something wrong? <a href="https://github.com/WhenDawnEnds/website"><u>You can contribute to fix it!</u></a> Or <a href="https://github.com/WhenDawnEnds/website/issues/new"><u>report an issue</u></a> if you're not a developer. 
                 </p>
 
                 <!-- A surprisingly not-red button to switch between the Linux style titles and plain English -->
@@ -174,10 +198,12 @@
                         <i class="fas fa-moon" id="toggle-dark-icon"></i>
                     </span>
                 </button>
-
-                <p class="is-7 gradient-text terminal">
-                    See something wrong? <a href="https://github.com/WhenDawnEnds/website"><u>You can contribute to fix it!</u></a> Or <a href="https://github.com/WhenDawnEnds/website/issues/new"><u>report an issue</u></a> if you're not a developer. 
-                </p>
+                <!-- And a toggle button to hide the footer. -->
+                <button class="button dark-gradient is-outlined" id="toggle-footer" onclick="toggleFooter()">
+                    <span class="icon is-small">
+                        <i class="fas fa-chevron-down" id="toggle-footer-icon"></i>
+                    </span>
+                </button>
             </div>
         </footer>
     </body>

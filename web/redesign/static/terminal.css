@@ -19,13 +19,25 @@ a {
 }
 
 .light {
-    background-color: #dddddd !important;
+    background-color: #eeeeee !important;
     background-size: 100% 100%;
 }
 
 .gradient-text {
-    background-image: linear-gradient(320deg, #8a8aff, #bc65f7);
+    /* background-image: linear-gradient(320deg, #8a8aff, #bc65f7); */
+    background-image: linear-gradient(to left, #5050ff, #a850ff);
     background-color: purple;
+    background-size: 100% 100%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+.urgent-text {
+    background-image: linear-gradient(to right, #ff0000, #ff00aa);
+    background-color: red;
     background-size: 100% 100%;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -47,6 +59,10 @@ a {
 
 .terminal {
     font-family: 'Cascadia Code', monospace;
+}
+
+.hidden {
+    display: none;
 }
 
 /* Animations */

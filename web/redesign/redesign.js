@@ -13,9 +13,12 @@ app.get("/maintenance", (req, res) => {
     res.sendFile(path.join(__dirname, "/maintenance.html"))
 })
 
-app.get("/test", (req, res) => {
-    res.status(500)
-    res.send("Execution should not reach this point")
+app.get("/red", (req, res) => {
+    res.sendFile(path.join(__dirname, "/red.html"))
+})
+
+app.get("/holidays", (req, res) => {
+    res.sendFile(path.join(__dirname, "/holidays.html"))
 })
 
 // Moreso pranking links than anything else
@@ -32,6 +35,7 @@ app.get("/links/onlyfans", (req, res) => {
 app.use("/terminal.css", (req, res) => {res.set("Content-Type", "text/css"); res.sendFile(path.join(__dirname, "/static/terminal.css"));})
 app.use("/avatar/transparentAscii", (req, res) => {res.set("Content-Type", "image/png"); res.sendFile(path.join(__dirname, "/static/avatarAsciiTransparent.png"));})
 app.use("/avatar/ascii", (req, res) => {res.set("Content-Type", "image/png"); res.sendFile(path.join(__dirname, "/static/avatarAscii.png"));})
+app.use("/art/blankie", (req, res) => {res.set("Content-Type", "image/png"); res.sendFile(path.join(__dirname, "/static/blankie.png"));})
 app.use("/avatar/normal", (req, res) => {res.set("Content-Type", "image/jpg"); res.sendFile(path.join(__dirname, "/static/avatar.jpg"));})
 app.use("/terminal.js", (req, res) => {res.set("Content-Type", "text/javascript"); res.sendFile(path.join(__dirname, "/static/terminal.js"));})
 

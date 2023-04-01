@@ -76,6 +76,26 @@ function toggleDark() {
     // TODO - Light switch noise when toggling
 }
 
+function toggleFooter() {
+    // Toggle the footer
+    var footer = document.getElementById("footer")
+    var toggleButton = document.getElementById("toggle-footer")
+    var toggleButtonIcon = document.getElementById("toggle-footer-icon")
+
+    // First, check if it's already enabled.
+    if (footer.classList.contains("hidden")) {
+        // It is enabled, so disable it.
+        footer.classList.remove("hidden")
+        toggleButtonIcon.classList.remove("fa-angle-up")
+        toggleButtonIcon.classList.add("fa-angle-down")
+    } else {
+        // It is disabled, so enable it.
+        footer.classList.add("hidden")
+        toggleButtonIcon.classList.remove("fa-angle-down")
+        toggleButtonIcon.classList.add("fa-angle-up")
+    }
+}
+
 // Auto toggle dark mode if the user has dark mode enabled
 if (window.matchMedia && !(window.matchMedia('(prefers-color-scheme: dark)')).matches) {
     toggleDark()
