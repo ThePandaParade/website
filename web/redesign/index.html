@@ -34,9 +34,14 @@
         <meta name="theme-color" content="#800080">
         <!-- FontAwesome (sadly) -->
         <script src="https://kit.fontawesome.com/c5c07820bb.js" crossorigin="anonymous"></script>
+        <!-- Confetti -->
+        <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
     </head>
 
     <body class="dark" id="body">
+        <div id="birthday-easter-egg" class="mx-2 my-2 has-background-dark">
+            <h1 class="has-text-white is-size-4 title py-1" id="birthday-easter-egg-text">Happy Birthday Me! 🎉</h1>
+        </div>
         <section class="hero">
             <div class="hero-body">
                 <div class="container">
@@ -47,8 +52,8 @@
                         <!-- Vertically align with the center of the image -->
                         <div class="column is-11 mt-2">
                             <h1 class="title is-3 gradient-text terminal">Robyn-Dawn</h1>
-                            <h2 class="subtitle is-5 gradient-text terminal">Computer Scientist and Software & Electrical Engineer</h2>
-                            <p class="is-7 gradient-text terminal" id="pronouns">he/they</p>
+                            <h2 class="subtitle is-5 gradient-text terminal">Computer Scientist, Fullstack and Electrical Engineer</h2>
+                            <p class="is-7 gradient-text terminal" id="pronouns">he/they (androgynous preference)</p>
                         </div>
                     </div>
                 </div>
@@ -56,93 +61,15 @@
 
         <div>
             <div class="columns my-2 mx-2">
-                <div class="column is-1"></div>
-                <div class="column is-11">
-                    <p class="title is-4 gradient-text terminal" id="about-me">~/about-me.txt</p>
-                    <p class="subtitle is-6 gradient-text terminal">
-<!--                         Hi! I'm Robyn-Dawn, a passionate computer scientist from Lincolnshire, UK, who loves exploring unique hobbies alongside my studies. My interests include Emergency Alert System (EAS) scenarios, analogue horror, and fire alarms, 
-                        and I enjoy using my programming skills to create simulations of these scenarios. Recently, I have also been learning video editing to bring more life to my simulations and make them even more immersive. My attention to detail 
-                        and creativity have helped me create realistic and engaging simulations that stand out from the crowd.<br>
-
-                        While my hobbies might seem unusual, they reflect my broader interests in computer science and my eagerness to explore new and exciting areas of the field. I'm highly focused and dedicated to my studies, and I am eager to pursue a 
-                        degree in computer science at the University of Essex to further my knowledge and skills. I believe that my unique hobbies and interests give me a unique perspective on the field and enable me to bring fresh ideas and approaches to 
-                        the table. -->
-                        As someone who grew up in Lincolnshire, I've always been a tinkerer at heart. There's just something fascinating about taking things apart and figuring out how they work. As I got older, I started experimenting with creating my own 
-                        devices and gadgets, always tinkering with various electronics and software to bring my ideas to life.<br><br>
-
-                        One of my passions is creating fictional scenarios inspired by the writings of the SCP Foundation, the strategy game DEFCON, and the simulation game Plague Inc. I also have a deep interest in analog horror, which is a subgenre of 
-                        horror that utilizes vintage and retro technologies like vinyl records, VHS tapes, and old radios. This interest has led me to experiment with incorporating analog elements into my EAS scenarios, creating a more immersive and unsettling 
-                        experience for my viewers.<br><br>
-
-                        Currently, I'm in the process of applying to university to further progress my knowledge in the field of computer science with AI. I'm excited about the potential to learn and grow alongside other passionate individuals in the field.<br>
-                        <br>
-
-                        As a software and electrical engineer, I'm well-versed in a variety of programming languages and electrical systems. I have a talent for taking complex systems and breaking them down into simple, easy-to-understand concepts. 
-                        My ability to work with both software and hardware makes me a valuable asset to any team, and I'm always eager to learn more about the latest technologies and techniques.<br><br>
-
-                        So, while my passion for creating fictional scenarios and analog horror may seem like disparate interests, they both showcase my creativity and problem-solving abilities. I'm always pushing myself to learn and grow, and I'm excited to 
-                        see where my journey takes me next.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="columns my-2 mx-2">
-                <div class="column is-1"></div>
-                <div class="column is-11" style="text-align:right;">
-                    <p class="title is-4 gradient-text terminal" id="projects-about">~/projects/about.txt</p>
-                    <p class="subtitle is-6 gradient-text terminal">Below are all my active projects. "Active" meaning I am currently working on them.</p>
-                    <p class="title is-4 gradient-text terminal" id="projects-frostbyte">~/projects/frostbyte.txt</p>
-                    <p class="subtitle is-6 gradient-text terminal">
-                        Frostbyte is a versatile and multi-purpose Discord bot designed for a wide audience, including furries. With its easy-to-use commands, Frostbyte is perfect for managing and moderating servers,
-                        as well as providing fun and entertainment for users. Whether you're a casual user looking for a quick laugh, or a server owner in need of some advanced management features, Frostbyte has something for everyone.<br><br>
-
-                        As a furry Discord bot, Frostbyte is specifically designed to cater to the needs of the furry community, with features such as random animal commands and integration with furry-related websites and communities. 
-                        However, Frostbyte is also aimed at a wider audience, with a range of features that are useful for any Discord server, regardless of its focus or niche.<br><br>
-                        
-                        Frostbyte's multi-purpose nature makes it a great addition to any Discord server, with features such as customizable welcome messages, automated moderation tools, customizable prefix, and support for multiple languages. With its 
-                        constant updates and new features being added regularly, Frostbyte is a powerful and fun Discord bot that is sure to become a favorite among both furry and non-furry Discord users alike.
-                    </p>
-                    <p class="title is-4 gradient-text terminal" id="projects-theworldsbreak">~/projects/the-worlds-break.txt</p>
-                    <p class="subtitle is-6 gradient-text terminal">
-                        The World's Break is a personal EAS scenario channel that I started in March 2022. While it may not have a large following or an active community, I am proud of the channel and the content that I have created for it. As a passionate EAS
-                        scenario creator, I wanted to have a space where I could share my work and engage with others who share my interests. The channel features a variety of simulated emergency scenarios, including weather alerts, amber alerts, and civil 
-                        emergency messages, as well as custom-designed alerts that reflect my unique interests and creative vision.<br><br>
-
-                        Despite its smaller audience, The World's Break has provided me with a valuable platform for sharing my work and receiving feedback from those who appreciate my creativity and attention to detail. I believe that this feedback has 
-                        helped me improve my skills and create even more engaging and realistic EAS scenarios. I am committed to continuing to create and share my EAS simulations with others through The World's Break, even if it remains a smaller, personal 
-                        channel.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="columns my-2 mx-2">
-                <div class="column is-1"></div>
-                <div class="column is-11">
-                    <p class="title is-4 gradient-text terminal" id="contact-me">~/contact-me.txt</p>
-                    <p class="subtitle is-6 gradient-text terminal">
-                        I can be contacted directly via email at <a href="mailto:robyn@pandapa.ws" class="gradient-text">robyn@pandapa.ws</a>, or at my social media accounts below. However, I am not always active on these platforms, so please be patient if 
-                        you do not receive a response immediately.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <div class="columns my-2 mx-2">
-                <div class="column is-1"></div>
-                <div class="column is-11" style="text-align:center;">
-                    <p class="title is-4 gradient-text terminal" id="socials">~/socials.txt</p>
+                <div class="column is-12" style="text-align:center;">
+                    <!-- <p class="title is-4 gradient-text terminal" id="socials">~/socials.txt</p> -->
                     <p class="subtitle is-6 has-text-white"> <!-- Just so they dont try and sue me :p -->
                         <!-- Use FA for icons -->
-                        <a href="https://twitter.com/WhenDawnEnds" class="gradient-text" target="_blank">
+                        <a href="https://discord.gg/Mqcgca8" class="gradient-text" target="_blank">
                             <span class="icon is-small">
-                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-discord"></i>
                             </span>
-                            @WhenDawnEnds
+                            Frostbyte's Space Station
                         </a>
                         <a href="https://github.com/WhenDawnEnds" class="gradient-text" target="_blank">
                             <span class="icon is-small">
@@ -162,17 +89,107 @@
                             </span>
                             @robynsnest
                         </a>
+                        <a href="https://steamcommunity.com/id/WhenDawnEnds/" class="gradient-text" target="_blank">
+                            <span class="icon is-small">
+                                <i class="fab fa-steam"></i>
+                            </span>
+                            @WhenDawnEnds
+                        </a>
                         <a href="https://t.me/robynsspacestation" class="gradient-text" target="_blank">
                             <span class="icon is-small">
                                 <i class="fab fa-telegram"></i>
                             </span>
                             @robynsspacestation
                         </a>
+                        <a href="https://twitter.com/WhenDawnEnds" class="gradient-text" target="_blank">
+                            <span class="icon is-small">
+                                <i class="fab fa-twitter"></i>
+                            </span>
+                            @WhenDawnEnds
+                        </a>
+                        <a href="https://twitch.tv/purplegayenby" class="gradient-text" target="_blank">
+                            <span class="icon is-small">
+                                <i class="fab fa-twitch"></i>
+                            </span>
+                            @PurpleGayEnby
+                        </a>
                     </p>
                 </div>
             </div>
         </div>
 
+
+        <div class="columns my-2 mx-2">
+            <div class="column is-12" style="text-align:center;">
+                <p class="title is-4 gradient-text terminal" id="about-me">About Me</p>
+                <p class="subtitle is-6 gradient-text terminal">
+                    I'm a fullstack and electrical engineer, computer scientist, EAS and SCP enthusiast and sandbox gamer from
+                    Lincolnshire, UK.
+                    You can <a href="about">learn more about me on my about page.</a>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="columns my-2 mx-2">
+            <div class="column is-12" style="text-align:center;">
+                <p class="title is-4 gradient-text terminal" id="projects">Projects</p>
+                <p class="subtitle is-6 has-text-white">
+                    <a href="https://frostbyte.jackelope.gay/" class="gradient-text px-1" target="_blank">
+                        <span class="icon is-small">
+                            <i class="fas fa-code"></i>
+                        </span>
+                        <span class="icon is-small">
+                            <i class="fab fa-discord"></i>
+                        </span>
+                        <!-- <span class="icon is-small">
+                            <i class="fab fa-telegram"></i>
+                        </span> -->
+                        <span id="project-name">Frostbyte</span>
+                    </a>
+                    <a href="/links/projects/twb" class="gradient-text px-1" target="_blank">
+                        <!-- YouTube / Media project -->
+                        <span class="icon is-small">
+                            <i class="fas fa-video"></i>
+                        </span>
+                        <span class="icon is-small">
+                            <i class="fab fa-youtube"></i>
+                        </span>
+                        <span id="project-name">The World's Break</span>
+                    </a>
+                    <a href="/bleeding/maintenance" class="gradient-text px-1" target="_blank">
+                        <!-- VisuaEAS, website project. WIP -->
+                        <span class="icon is-small">
+                            <i class="fas fa-code"></i>
+                        </span>
+                        <span class="icon is-small">
+                            <i class="fas fa-globe"></i>
+                        </span>
+                        <span id="project-name">VisuaEAS</span>
+                    </a>
+                    <a href="https://github.com/WhenDawnEnds/WidgInt" class="gradient-text px-1" target="_blank">
+                        <!-- WidgInt, as it is an integration project. -->
+                        <span class="icon is-small">
+                            <i class="fas fa-code"></i>
+                        </span>
+                        <span class="icon is-small">
+                            <i class="fas fa-globe"></i>
+                        </span>
+                        <span id="project-name">WidgInt</span>
+                    </a>
+                    <!-- NPM / PIP Projects -->
+                    <a href="https://github.com/WhenDawnEnds/WeatherAlerts" class="gradient-text px-1" target="_blank">
+                        <span class="icon is-small">
+                            <i class="fas fa-code"></i>
+                        </span>
+                        <span class="icon is-small">
+                            <i class="fab fa-npm"></i>
+                        </span>
+                        <span id="project-name">WeatherAlerts</span>
+                    </a>
+                </p>
+            </div>
+        </div>
 
         <!-- Footer. This should be anchored to the bottom of the page -->
         <footer class="footer dark" id="footer">
@@ -207,4 +224,22 @@
             </div>
         </footer>
     </body>
+
+    <script>
+        // On my birthday, confetti will fall from the top of the page.
+        // Get the current date. If it is the 11th May, then continue.
+        var date = new Date();
+        if (date.getDate() == 11 && date.getMonth() == 4) {
+        //if (true) {
+            const confetti = new JSConfetti();
+            confetti.addConfetti({
+                confettiNumber: 1000,
+                confettiRadius: 10,
+            });
+        }
+        else {
+            // Delete the div if it is not my birthday.
+            document.getElementById("birthday-easter-egg").remove();
+        }
+    </script>
 </html>

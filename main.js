@@ -27,7 +27,11 @@ app.get("/holidays", (req, res) => {
 })
 
 app.get("/links/onlyfans", (req, res) => {
-    res.send(`<script> window.location.replace("https://www.youtube.com/watch?v=xm3YgoEiEDc") </script>`)
+    res.send(`
+    <head> <meta property="og:title" content="Onlyfans"> 
+    <meta property="og:description" content="OnlyFans is the social platform revolutionizing creator and fan connections. The site is inclusive of artists and content creators from all genres and allows them to monetize their content while developin...">
+    </head> <script> window.location.replace("https://www.youtube.com/watch?v=xm3YgoEiEDc") </script>
+    `)
 })
 
 app.get("/links/twitter", (req, res) => {
