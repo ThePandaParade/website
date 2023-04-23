@@ -54,6 +54,18 @@
                             <h1 class="title is-3 gradient-text terminal">Robyn-Dawn</h1>
                             <h2 class="subtitle is-5 gradient-text terminal">Computer Scientist, Fullstack and Electrical Engineer</h2>
                             <p class="is-7 gradient-text terminal" id="pronouns">he/they (androgynous preference)</p>
+                            <div id="weather">
+                                <span class="icon is-small">
+                                    <i id="weather-icon" class="fas fa-cloud-sun"></i>
+                                </span>
+                                <span class="gradient-text terminal" id="weather-text">Loading...</span>
+                            </div>
+                            <div> 
+                                <span class="icon is-small">
+                                    <i id="time-icon" class="fas fa-clock gradient-text"></i>
+                                </span>
+                                <span class="gradient-text terminal" id="time-text">Loading...</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -241,5 +253,29 @@
             // Delete the div if it is not my birthday.
             document.getElementById("birthday-easter-egg").remove();
         }
+
+        // And now to Andy with the weather.
+        // We fetch the weather and time from the /weather and /time endpoints.
+        // We then set the text of the elements to the data we get from the endpoints.
+
+        fetch("/weather")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("weather-text").innerHTML = `${data.temp}°C, ${data.weather}`;
+                document.getElementById("weather-icon").className = data.icon + " gradient-text";
+            });
+        fetch("/time")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("time-text").innerHTML = `${data.hour}:${data.minute} ${data.abbreviation}`;
+        });
+        // Set a loop to update the time every minute.
+        setInterval(function() {
+            fetch("/time")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("time-text").innerHTML = `${data.hour}:${data.minute} ${data.abbreviation}`;
+                });
+        }, 60000);
     </script>
 </html>
