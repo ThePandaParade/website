@@ -5,14 +5,14 @@
         <title>Robyn-Dawn</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Icon -->
-        <link rel="icon" href="/bleeding/avatar/normal">
+        <link rel="icon" href="/avatar/normal">
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Tilt+Neon&display=swap" rel="stylesheet">
         <!-- Import local files -->
-        <link rel="stylesheet" href="/bleeding/terminal.css">
-        <script src="/bleeding/terminal.js"></script>
+        <link rel="stylesheet" href="/terminal.css">
+        <script src="/terminal.js"></script>
         <!-- Bulma -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
         <!-- FontAwesome (sadly) -->
@@ -28,7 +28,7 @@
                         <div class="column is-11 mt-2">
                             <h1 class="title is-1 gradient-text glitch" id="status-code">Robyn-Dawn</h1>
                             <h2 class="subtitle is-3 gradient-text terminal" id="status-info">Computer Scientist and Software & Electrical Engineer</h2>
-                            <h3 class="is-5 gradient-text terminal" id="go-back">he/they</h3>
+                            <h3 class="is-5 gradient-text terminal" id="go-back"><a href="/">Back to saftey!</a></h3>
                             <h4 class="is-7 gradient-text terminal" id="fun-fact">Fun fact: this shouldn't be visible.</h4>
                         </div>
                     </div>
@@ -45,40 +45,88 @@
         // Get the status info
         // TODO: Make this more efficient
         var status_info = "";
-        if (status_code == "404") {
-            status_info = "The page you were looking for doesn't exist. Did you make a typo, or is it just me?";
-        } else if (status_code == "403") {
-            status_info = "You don't have permission to access this page. I'd let you in, but I'm your browser. I can't let you in. Sorry.";
-        } else if (status_code == "500") {
-            status_info = "Something went horribly wrong and the server is now on fire. Please don't do that again. Thanks.";
-        } else if (status_code == "418") {
-            status_info = "I'm a teapot, here's my handle, here's my spout. When I get all steamed up, hear me shout. Just tip me over and pour me out.<br>Also, just because I'm British doesn't mean I'm a cup of tea. Thanks."
-        } else if (status_code == "200") {
-            status_info = "You're not supposed to be here. You're supposed to be on the main page. Go back to the main page. I'm not your mother, but I'm telling you to go back to the main page."
-        }
-        else {
-            status_info = `Something went wrong, and I don't know what the message is. Sorry.<br><img src=\"https://http.cat/${status_code}\" alt=\"Yeah I dunno, its a cat. Imagine a cat.\">`;
+        switch (status_code) {
+            case "200":
+                status_info = "You're not supposed to be here. You're supposed to be on the main page. Go back to the main page. I'm not your mother, but I'm telling you to go back to the main page.";
+                break;
+            case "400":
+                status_info = "Oops you made a request that I don't understand. I'm not a very smart server, so I don't know what you want. Sorry.";
+                break;
+            case "401":
+                status_info = "Please authenticate yourself, I don't know who you are.";
+                break;
+            case "402":
+                status_info = `<iframe width="1280" height="720" src="https://www.youtube.com/embed/ETxmCCsMoD0" title="Abba - Money, Money, Money (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; 
+                clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+                break;
+            case "403":
+                status_info = "You don't have permission to access this page. I'd let you in, but I'm your browser. I can't let you in. Sorry.";
+                break;
+            case "404":
+                status_info = "The page you were looking for doesn't exist. Did you make a typo, or is it just me?";
+                break;
+            case "405":
+                status_info = "You can't do that. That method is not allowed. Stop it.";
+                break;
+            case "406":
+                status_info = "The server can't give you what you want. Sorry.";
+                break;
+            case "408":
+                status_info = "zzzzzz...";
+                break;
+            case "410":
+                status_info = "💨 Gone";
+                break;
+            case "413":
+                status_info = "I can't eat that, it's too big. Please make it smaller. Thanks.";
+                break;
+            case "418":
+                status_info = "I'm a teapot, here's my handle, here's my spout. When I get all steamed up, hear me shout. Just tip me over and pour me out.<br>Also, just because I'm British doesn't mean I'm a cup of tea. Thanks.";
+                break;
+            case "450":
+                status_info = "I'm not allowed to talk to you. Sorry.";
+                break;
+            case "451":
+                status_info = "Due to legality, I can't. If there's restrictions in the country to the UK, thats probably why. Sadly I can't even really make a joke.";
+                document.getElementById("go-back").innerHTML = '<a onclick="history.back()">Back to where you came from!</a>';
+                // Delete the fun fact element
+                document.getElementById("fun-fact").remove();
+                // Delete this script element
+                document.currentScript.remove();
+                break;
+            case "500":
+                status_info = "Something went horribly wrong and the server is now on fire. Please don't do that again. Thanks.";
+                break;
+            case "522":
+                status_info = "zzzzzz...";
+                break;
+            case "420":
+                status_info = "no.";
+                break;
+            default:
+                status_info = `Something went wrong, and I don't know what the message is. Sorry.<br><img src=\"https://http.cat/${status_code}\" alt=\"Yeah I dunno, its a cat. Imagine a cat.\">`;
         }
         // Set the status code
         document.getElementById("status-code").innerHTML = status_code;
         // Set the status info
         document.getElementById("status-info").innerHTML = status_info;
         // Set the go back link
-        document.getElementById("go-back").innerHTML = "<a href=\"/bleeding\">Back to saftey!</a>";
+        //document.getElementById("go-back").innerHTML = "<a href=\"/bleeding\">Back to saftey!</a>";
         // Set the fun fact
         var facts = [
-            "Fun fact: this is the second time I've redone this website.",
-            "Fun fact: despite being a computer scientist, I'm not very good at front end. Hence why I don't say I'm full stack.",
+            "Fun fact: This is the second time I've redone this website.",
+            // "Fun fact: despite being a computer scientist, I'm not very good at front end. Hence why I don't say I'm full stack.",
             "Fun fact: I'm a huge fan of the Australian TV show <a href=\"https://en.wikipedia.org/wiki/Bluey_(2018_TV_series)\" target=\"_blank\">Bluey</a>. Don't judge me.",
-            "Fun fact: I have been a furry since 2019. I'm not ashamed of it, but I don't really talk about it.",
+            "Fun fact: I have been a furry since 2018. I'm not ashamed of it, but I don't really talk about it.",
             "Fun fact: I love Sheldon Cooper from <a href=\"https://en.wikipedia.org/wiki/The_Big_Bang_Theory\" target=\"_blank\">The Big Bang Theory</a>. I'll fight you on this.",
-            "Fun fact: I want to be a pilot if I fail at being a computer scientist.",
+            // "Fun fact: I want to be a pilot if I fail at being a computer scientist.",
             "Fun fact: Copilot does a big chunk of the CSS for this website. Thanks GitHub Student!",
-            "Fun fact: The whole universe was in a hot dense state, then nearly fourteen billion years ago expansion started. Wait, wrong website.",
+            "Fun fact: The whole universe was in a hot dense state, then nearly fourteen billion years ago expansion started wait.",
             "Fun fact: I knew how to play chess when I was 3. I'm not very good at it now, but I still know how to play. School was boring.",
             "Fun fact: I am shit at English. I'm not even sure if I'm using the right grammar here. I've been corrected by someone from South Africa before.",
-            "Fun fact: my fursona was going to be a bear, but I decided to go with a red panda instead. Wahkanda.",
-            "Fun fact: I can say \"shut up\" in Polish, but I can't type it."
+            "Fun fact: My fursona was going to be a bear, but I decided to go with a red panda instead. Wahkanda.",
+            "Fun fact: I can say \"shut up\" in Polish, but I can't type it.",
+            "Fun fact: I burnt out on Computer Science, so I am now just a fullstack engineer."
         ]
         document.getElementById("fun-fact").innerHTML = facts[Math.floor(Math.random() * facts.length)];
     </script>

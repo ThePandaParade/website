@@ -10,6 +10,7 @@
     "express-fileupload": "^1.2.0",
     "fastify": "^4.2.0",
     "file-type": "^12.4.0",
+    "geoip-lite": "^1.4.7",
     "node-cache": "^5.1.2",
     "node-fetch-commonjs": "^3.2.4",
     "path": "^0.12.7",
