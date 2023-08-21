@@ -41,6 +41,11 @@ app.get("/holidays", (req, res) => {
     res.sendFile(path.join(__dirname, "/holidays.html"))
 })
 
+// Support for my Matrix server \\
+app.get("/.well-known/matrix/server", (req,res) => {
+    res.send({"m.server": "matrix.pandapa.ws"})
+})
+
 // Moreso pranking links than anything else
 app.get("/admin", (req, res) => {
     res.redirect("https://twitter.com/Scratch21Music/status/1635430548314406912?s=20") // Why did I pick the video of Scratch21 saying they have the biggest balls in the world? No idea.
