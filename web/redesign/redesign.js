@@ -43,7 +43,7 @@ app.get("/holidays", (req, res) => {
 
 // Support for my Matrix server \\
 app.get("/.well-known/matrix/server", (req,res) => {
-    res.send({"m.server": "matrix.pandapa.ws"})
+    res.send({"m.server": "matrix.pandapa.ws:8008"})
 })
 
 // Moreso pranking links than anything else
@@ -64,6 +64,7 @@ app.use("/art/blankie", (req, res) => {res.set("Content-Type", "image/png"); res
 app.use("/avatar/normal", (req, res) => {res.set("Content-Type", "image/jpg"); res.sendFile(path.join(__dirname, "/static/avatar.jpg"));})
 app.use("/terminal.js", (req, res) => {res.set("Content-Type", "text/javascript"); res.sendFile(path.join(__dirname, "/static/terminal.js"));})
 app.use("/art/comfy", (req, res) => {res.set("Content-Type", "image/png"); res.sendFile(path.join(__dirname, "/static/comf.png"));})
+app.use("/art/comfy-noise", (req, res) => {res.set("Content-Type", "image/png"); res.sendFile(path.join(__dirname, "/static/comf-noise.png"));})
 app.use("/branding/banner", (req, res) => {res.set("Content-Type", "image/png"); res.sendFile(path.join(__dirname, "/static/banner.png"));})
 
 // Weather & Time \\

@@ -6,6 +6,8 @@ var filet = require("file-type")
 const path = require('path');
 const rawsubdom = Object.keys(require("./domains.json"))
 const geoip = require("geoip-lite")
+const fetch = require("node-fetch-commonjs")
+const fs = require("fs")
 const embargo = [
     // Embargoed countries, subdivisions or cities. (https://en.wikipedia.org/wiki/Embargo#List_of_countries_under_embargo)
     // This can also be regions under sanctions (https://en.wikipedia.org/wiki/International_sanctions#Sanctioned_countries), typically diplomatic/military sanctions.
@@ -31,42 +33,78 @@ app.use(express.static("static"))
 app.use(efu({safeFileNames: true}))
 
 // Geoblocking \\
-app.use((req, res, next) => {
+/* app.use((req, res, next) => {
     const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     const country = geoip.lookup(ip)?.country;
     const region = geoip.lookup(ip)?.region;
     const city = geoip.lookup(ip)?.city;
-    if ((embargo.includes(country) || embargo.includes(region) || embargo.includes(city)) && req.url !== '/bleeding/error/451') {
+    if ((embargo.includes(country) || embargo.includes(region) || embargo.includes(city)) && req.url !== '/error/451') {
         console.log(`Blocked request from ${country} - ${ip}`)
-        res.redirect('/bleeding/error/451');
+        res.redirect('/error/451');
     } else {
         next();
     }
-});
+}); */
 
 
-// Redesign \\
-app.use("/",require("./web/redesign/redesign.js"))
+app.use(async (req,res,next) => {
+    // Block the ByteDance and ByteSpider UserAgents. This is due to the aggresive nature of the web spider.
+    // and plus, fuck tiktok.
+    let useragent = req.headers['user-agent']
+    let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    
+    if (useragent.toLowerCase().includes("bytedance") || useragent.toLowerCase().includes('bytespider')) {
+        let lookup = geoip.lookup(ip)
+        res.send("<h1>Forbidden.</h1><h2>Malicious User Agent - please verify browser integrity.</h2><h5>This incident has been logged.</h5>")
+        const snipeStream = fs.createWriteStream("snipe.log", {flags: "a+"})
 
-/* app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, "/web/root.html"))
+        // After we send them to a blank page, we log their user agent, IP, origin country, etc.
+        await snipeStream.write(`Request refused:
+\nUA: ${useragent}
+\nOrigin Country: ${lookup?.city}, ${lookup?.region}, ${lookup?.country}
+\nIP: ${ip}
+\nTime: ${new Date().toLocaleTimeString()} ${new Date().toLocaleDateString()}
+##########################################\n`)
+        snipeStream.end()
+
+        // We also send a webhook message to discord.
+        const response = await fetch(process.env.DISCORD_WEBHOOK, {
+            method: "POST",
+            body: JSON.stringify({
+                "embeds": [
+                  {
+                    "title": `ByteDance / ByteSpider UserAgent Prevented`,
+                    "color": 0xff00e1,
+                    "fields": [
+                      {
+                        "name": `User Agent`,
+                        "value": useragent
+                      },
+                      {
+                        "name": `Originating Country`,
+                        "value": `${lookup?.city}, ${lookup?.region}, ${lookup?.country}`,
+                        "inline": true
+                      },
+                      {
+                        "name": `IP`,
+                        "value": `${ip}`,
+                        "inline": true
+                      }
+                    ],
+                    "timestamp": `${Date.now()}`
+                  }
+                ]
+              }),
+            headers: {"Content-Type": "application/json"}
+        })
+        const data = await response.json()
+        console.log(data)
+    }
+    else { // They're clean
+        next()
+    }
 })
 
-app.get('/devices', (req,res) => {
-    res.sendFile(path.join(__dirname, "/web/devices.html"))
-})
-
-app.get("/holidays", (req, res) => {
-    res.sendFile(path.join(__dirname, "/web/holidays.html"))
-})
-
-app.get("/links/onlyfans", (req, res) => {
-    res.send(`
-    <head> <meta property="og:title" content="Onlyfans"> 
-    <meta property="og:description" content="OnlyFans is the social platform revolutionizing creator and fan connections. The site is inclusive of artists and content creators from all genres and allows them to monetize their content while developin...">
-    </head> <script> window.location.replace("https://www.youtube.com/watch?v=xm3YgoEiEDc") </script>
-    `)
-}) */
 
 app.get("/links/twitter", (req, res) => {
     res.redirect("https://twitter.com/WhenDawnEnds")
@@ -77,7 +115,7 @@ app.get("/links/github", (req, res) => {
 })
 
 app.get("/links/telegram", (req, res) => {
-    res.redirect("https://t.me/WhenDawnEnds")
+    res.redirect("https://t.me/robynsspacestation")
 })
 
 app.get("/links/patreon", (req, res) => {
@@ -85,27 +123,23 @@ app.get("/links/patreon", (req, res) => {
 })
 
 app.get("/links/mastodon", (req, res) => {
-    res.redirect("https://jackelope.gay/@robyndawn")
+    res.redirect("https://mastodon.pandapa.ws/@robyndawn")
 })
 
-app.get("/links/projects/frostbyte", (req, res) => {
-    res.redirect("https://frostbyte.jackelope.gay")
+app.get("/links/steam", (req, res) => {
+    res.redirect("https://steamcommunity.com/id/WhenDawnEnds/")
 })
 
-app.get("/links/projects/twb", (req, res) => {
-    res.redirect("https://www.youtube.com/channel/UCiXbaS2cQl58NlHl6gWRvqQ")
+app.get("/links/throne", (req, res) => {
+    res.redirect("https://throne.com/whendawnends")
 })
 
-
-// Bleeding Edge \\
-// Redesign Zone \\
-
-app.get("/notice/", (req, res) => {
-    res.sendFile(path.join(__dirname, "/web/notice.html"))
+app.get("/links/twitch", (req, res) => {
+    res.redirect("https://twitch.tv/purplegayenby")
 })
 
-
-
+// Redesign \\
+app.use("/",require("./web/redesign/redesign.js"))
 
 
 // Deprecated Zone \\
