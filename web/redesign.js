@@ -1,5 +1,3 @@
-// 🔪🩸 Code \\
-
 const express = require("express")
 require('dotenv').config()
 const app = express.Router()
@@ -188,9 +186,9 @@ app.use((req, res, next) => {
     if (req.url.includes("/error/") || req.url.includes("/maintenance")) {
         next()
     } else if (req.url.includes("/bleeding")) {
+    // Any requests to bleeding edge code get sent to the respective error handler.
        res.redirect("/bleeding/error/404/")
     } else {
-        // Until I actually finish the redesign, I'm going to redirect to /error/404/
         res.redirect("/error/404/")
     }
 })

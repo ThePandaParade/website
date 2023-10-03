@@ -105,6 +105,10 @@ app.use(async (req,res,next) => {
     }
 })
 
+// Endpoint for testing any sort of blocking.
+app.get("/test", (req, res) => {
+    res.send("Hello, world!")
+})
 
 app.get("/links/twitter", (req, res) => {
     res.redirect("https://twitter.com/WhenDawnEnds")
@@ -138,8 +142,15 @@ app.get("/links/twitch", (req, res) => {
     res.redirect("https://twitch.tv/purplegayenby")
 })
 
+// Optional import: Spotify \\
+if (process.env.SPOTIFY_CLIENT_ID) { // Check if the Spotify client ID is defined in the .env file
+    console.log("Spotify client ID found. Starting Spotify handler...")
+    app.use("/spotify", require("./spotifyHandler/spotify.js"))
+}
+
 // Redesign \\
-app.use("/",require("./web/redesign/redesign.js"))
+app.use("/",require("./web/redesign.js"))
+
 
 
 // Deprecated Zone \\

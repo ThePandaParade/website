@@ -62,12 +62,12 @@
                                 </span>
                                 <span class="pastel-green terminal" id="time-text">Loading...</span>
                             </div>
-                            <!-- <div>
+                            <div>
                                 <span class="icon is-small">
-                                    <i id="spotify-icon" class="fas fa-play-circle gradient-text"></i>
+                                    <i id="spotify-icon" class="fas fa-play-circle pastel-green"></i>
                                 </span>
-                                <span class="gradient-text terminal" id="playing-text">Loading...</span>    
-                            </div> -->
+                                <span class="pastel-green terminal" id="playing-text">Loading...</span>    
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -267,6 +267,26 @@
                     }
                     document.getElementById("time-text").innerHTML = `${data.hour}:${data.minute} ${data.abbreviation}`;
         });
+        // Amendment: Spotify is now a thing.
+        // If there is an error, we simply hide the element (as it is not required). If there is no error, the response will be in plain HTML.
+        // We will also hide the element if the response is 404, as this means the Spotify handler is not running.
+        // The endpoint this time is /spotify/run.
+        fetch("/spotify/run")
+            .then(response => {
+                if (response.status == 200) {
+                    return response.text();
+                }
+                else {
+                    document.getElementById("spotify-icon").style.display = "none";
+                    document.getElementById("playing-text").style.display = "none";
+                }
+            })
+            .then(data => {
+                if (data != undefined) {
+                    document.getElementById("playing-text").innerHTML = data;
+                }
+            });
+
         // Set a loop to update the time every minute.
         setInterval(function() {
             fetch("/internal/time")
@@ -280,6 +300,14 @@
                 document.getElementById("weather-text").innerHTML = `${data.temp}°C, ${data.weather}`;
                 document.getElementById("weather-icon").className = data.icon + " pastel-green";
             });
+            // Check if the Spotify element is hidden. If it is, then we don't need to update it.
+            if (document.getElementById("spotify-icon").style.display != "none") {
+                fetch("/spotify/run")
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById("playing-text").innerHTML = data;
+                    });
+            }
         }, 60000);
     </script>
 </html>

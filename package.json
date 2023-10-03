@@ -8,14 +8,12 @@
     "dotenv": "^16.0.1",
     "express": "^4.17.1",
     "express-fileupload": "^1.2.0",
-    "fastify": "^4.2.0",
     "file-type": "^12.4.0",
     "geoip-lite": "^1.4.7",
     "node-cache": "^5.1.2",
     "node-fetch-commonjs": "^3.2.4",
     "path": "^0.12.7",
     "read-chunk": "^3.2.0",
-    "spotify-web-api-node": "^5.0.2",
     "twitter-api-v2": "^1.12.3"
   },
   "scripts": {
@@ -30,5 +28,10 @@
   "bugs": {
     "url": "https://github.com/WhenDawnEnds/image-server/issues"
   },
-  "homepage": "https://github.com/WhenDawnEnds/image-server#readme"
+  "homepage": "https://github.com/WhenDawnEnds/image-server#readme",
+  "optionalDependencies": {
+    "chalk": "^4.1.2",
+    "fastify": "^4.23.2",
+    "spotify-web-api-node": "^5.0.2"
+  }
 }
