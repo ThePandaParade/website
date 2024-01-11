@@ -127,7 +127,7 @@ app.get("/links/patreon", (req, res) => {
 })
 
 app.get("/links/mastodon", (req, res) => {
-    res.redirect("https://mastodon.pandapa.ws/@robyndawn")
+    res.redirect("https://mastodon.pandapa.ws/@me")
 })
 
 app.get("/links/steam", (req, res) => {
@@ -143,7 +143,7 @@ app.get("/links/twitch", (req, res) => {
 })
 
 // Optional import: Spotify \\
-if (process.env.SPOTIFY_CLIENT_ID) { // Check if the Spotify client ID is defined in the .env file
+if (process.env.SPOTIFY_CLIENT_ID && process.env.SPOTIFY_ENABLED) { // Check if the Spotify client ID is defined in the .env file
     console.log("Spotify client ID found. Starting Spotify handler...")
     app.use("/spotify", require("./spotifyHandler/spotify.js"))
 }

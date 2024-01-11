@@ -5,6 +5,10 @@ const path = require('path');
 
 const NodeCache = require('node-cache');
 const fetch = require('node-fetch-commonjs');
+
+var cookieParser = require('cookie-parser')
+app.use(cookieParser())
+
 const cacheDurationSeconds = 60 * 60; // 1 hour in seconds
 const weatherCache = new NodeCache({
     stdTTL: cacheDurationSeconds,
@@ -39,9 +43,22 @@ app.get("/holidays", (req, res) => {
     res.sendFile(path.join(__dirname, "/holidays.html"))
 })
 
+app.get("/dms", (req, res) => {
+    res.sendFile(path.join(__dirname, "/dms.html"))
+})
+
+app.get("/blog/exodus", (req, res) => { // TODO: make an actual FUCKING BLOG SYSTEM
+    res.sendFile(path.join(__dirname, "/blog/2024-01-11/exodus.html"))
+})
+
 // Support for my Matrix server \\
 app.get("/.well-known/matrix/server", (req,res) => {
-    res.send({"m.server": "matrix.pandapa.ws:8008"})
+    res.send({"m.server": "matrix.pandapa.ws:443"})
+})
+
+// Support for my Mastodon server \\
+app.get("/.well-known/webfinger", (req,res) => {
+    res.status(301).redirect("https://mastodon.pandapa.ws/.well-known/webfinger")
 })
 
 // Moreso pranking links than anything else
@@ -64,6 +81,11 @@ app.use("/terminal.js", (req, res) => {res.set("Content-Type", "text/javascript"
 app.use("/art/comfy", (req, res) => {res.set("Content-Type", "image/png"); res.sendFile(path.join(__dirname, "/static/comf.png"));})
 app.use("/art/comfy-noise", (req, res) => {res.set("Content-Type", "image/png"); res.sendFile(path.join(__dirname, "/static/comf-noise.png"));})
 app.use("/branding/banner", (req, res) => {res.set("Content-Type", "image/png"); res.sendFile(path.join(__dirname, "/static/banner.png"));})
+app.use("/art/parade", (req, res) => {res.set("Content-Type", "image/png"); res.sendFile(path.join(__dirname, "/static/wah_parade.png"));})
+
+// Yeah one day I'll make this automated. Not today though.
+// 2024-01-11 related assets
+app.use("/blog/2024-01-11/desktop", (req, res) => {res.set("Content-Type", "image/png"); res.sendFile(path.join(__dirname, "/blog/2024-01-11/desktop.png"));})
 
 // Weather & Time \\
 app.get("/internal/weather", (req, res) => {

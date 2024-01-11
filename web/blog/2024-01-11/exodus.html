@@ -1,0 +1,100 @@
+<!-- TODO: actually fucking make a blog system lmao -->
+<!-- "blog post" describing my transition to linux -->
+<!-- if any future employer comes across this or hell a lecturer from college... -->
+<!-- heyyyyyyyyyyy -->
+<!DOCTYPE html>
+<html style="overflow-y:auto" class="dark">
+    <head>
+        <meta charset="utf-8">
+        <title>./exodus.html</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Icon -->
+        <link rel="icon" href="/art/parade">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Tilt+Neon&display=swap" rel="stylesheet">
+        <!-- Import local files -->
+        <link rel="stylesheet" href="/terminal.css">
+        <script src="/terminal.js"></script>
+        <!-- Bulma -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+        <!-- FontAwesome (sadly) -->
+        <script src="https://kit.fontawesome.com/c5c07820bb.js" crossorigin="anonymous"></script>
+        <!-- Meta (for embeds )-->
+        <meta property="og:title" content="./exodus.html">
+        <meta property="og:description" content="My journey away from the Microsoft ecosystem.
+Now available on no-fucking-where except here, I'm not a cashout.">
+        <meta property="og:image" content="/art/parade">
+        <meta name="theme-color" content="#CAB8FF">
+    </head>
+
+    <body class="is-overflow dark">
+        <div class="mx-3 mt-3">
+            <h1 class="title is-3 pastel-purple terminal">./exodus.html</h1>
+            <h2 class="subtitle is-5 pastel-blue terminal">My transition to Linux, and away from the Microsoft ecosystem.</h2>
+            <h3 class="is-7 pastel-green terminal">Written 2024-01-11 - Robyn-Dawn W B</h3>
+            <p class="pastel-purple terminal">
+                To be fair, I never really *enjoyed* Windows. I only really used it because the app support was much greater than Linux. I had Manjaro on my laptop, however I don't use my
+                laptop outside of travel or "i fucked up" moments. But, last week, I decided to change that.<br><br>
+
+                I have now fully moved to Arch Linux on my daily driver, and honestly? It's not as bad as I thought it would be.<br><br>
+
+                I have always been hesitant to make the jump due to well, sheer lesser app support (natively) on Linux compared to Windows. But well, with light of Microsoft's
+                ... "decision" to go crazy on the AI hype train, I thought it'd be time to switch. Albeit my hand was also forced as trying to dual boot led to my Windows install
+                corrupting. But that's beside the point.<br><br>
+
+                At first there was teething pains, i.e the root partition taking up little space, resulting in a few minutes in gParted Live to fix (god bless ventoy),
+                however in the end it was relatively a success. I have also decided at the same time to start migrating away from my Series S onto the Steam Deck and my PC itself.
+                Hence why this is called "the exodus", the exodus from Microsoft's ecosystem.<br><br>
+
+                Now, anyone who's known me for a good while knows I've never been against Microsoft's products, however recently their jump on the AI hype train has been a bit...
+                excessive. Now sure, I'm not saying AI is bad, but I'm saying that it's not the be all end all. Especially with their addition of the Co-Pilot button and the
+                "AI-powered" file recovery in Windows 11. Because let's all be honest, it's not AI, it's just a glorified search bar. And the Co-Pilot button? It's just a
+                glorified ChatGPT prompt.<br><br>
+
+                I have also recently picked up a copy of the book "Rebel Code" by Glyn Moody, which is a book about the history of Linux and the open source movement. Anyone who
+                knows me can also say that I am a massive advocate of open source and decentralisation, and this book is probably the main reason I decided to make the jump.
+                However, the Linux migration was not as smooth as I thought it would be.<br><br>
+            </p>
+                <figure>
+                    <image src="/blog/2024-01-11/desktop" class="image"></image>
+                    <figcaption class="has-text-centered pastel-blue">Screenshot of my desktop as I am writing this.</figcaption>
+                </figure>
+            <p class="pastel-purple terminal">
+                <br><br>
+                To start, originally I was going to dual boot, however when using archinstall it overwritten the last sector of my Windows partition, resulting in a corrupt install.
+                The files were already gone and the only backups I had were my commisions folder, and anything from my OneDrive. So, I decided to go full in.
+                This was the first time I have installed Arch in a long time - last dating to 2018, and honestly? I was never aware of archinstall until now. It's a godsend.
+                The next problem which arose (outside of the root partition being too small) was the fact that I had to install the Nvidia drivers. Now, I upgraded to a 4060 over
+                the festive period - which was a massive upgrade from my 1660 Super. However, I completly forgot that Nvidia and Linux don't mix well. So, I had to debug for 
+                about 2 hours using the base drivers, until I realised that I was installing the drivers for the wrong kernel. After that, it was smooth sailing.<br><br>
+
+                Normally my go-to DE is KDE Plasma, however I decided to use GNOME this time around. As a first time GNOME user, I was pleasantly surprised. It's not as bad as
+                people make it out to be. After a few tweaks and extensions, I had a fully functional desktop.<br>
+                My next "problem" was the fact Stellaris (my favourite game) is... highly unstable on Linux, especially when modded. I have yet to find a fix for this, however
+                ProtonDB states that a fix is to just use some launch arguments. Spoiler alert: it doesn't work. I've yet to find a fix so, if anyone knows a fix... 
+                <a href="/links/telegram">hit me up on Telegram</a>.<br><br>
+
+                I have also decided to use the Steam Deck as my main console, and I have to say, it's a massive upgrade from the Series S. The ability to play my entire Steam
+                library on the go is SUCH a massive upgrade, and with a dock it just feels like a fully fledged console. Alongside any game that runs on Linux which is a massive
+                plus. I've already modded my Deck with a 500GB SSD - compared to the stock 64GB, and I genuienly have no regrets. My main problem with the Deck so far is the fact
+                that most games I played on the Xbox as a whole I don't own on Steam, so I'm having to rebuy them all. But, it's a small price to pay for salvation. And
+                best of all? No subscription prices just to use the damn thing. Looking at you, big three.<br><br>
+
+                I have yet to find a replacement for OneDrive or Office 365 as a whole due to the fact that I use it for school, however I am sure eventually through time, I will
+                fill the gaps in my workflow to make it fully Linux compatible (and open source (hopefully)).<br><br>
+
+                The great conclusion to it all? I can now easily recover my stuff in a failure, I'm not tied to one device or one ecosystem, and I can now use my PC for what it's
+                meant to be used for - compiling AOSP and turning it into a glorified space heater. And for anyone who can't tell, yes that was satire. It's for gaming and 
+                programming. And sometimes, compiling AOSP. But that's beside the point.
+            </p>
+            <h4 class="pastel-blue">Proof read by:
+                <a href="/links/telegram">@ThePandaParade</a>
+                @mokumotu <!-- Nothing to really link to here... -->
+                Ashling <!-- no username :v -->
+            </h4>
+        </div>
+
+    </body>
+</html>
