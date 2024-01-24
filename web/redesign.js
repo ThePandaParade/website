@@ -57,9 +57,10 @@ app.get("/.well-known/matrix/server", (req,res) => {
 })
 
 // Support for my Mastodon server \\
-app.get("/.well-known/webfinger", (req,res) => {
-    res.status(301).redirect("https://mastodon.pandapa.ws/.well-known/webfinger")
-})
+app.get(['/.well-known/webfinger*', '/.well-known/host-meta*', '/.well-known/nodeinfo*'], function (req,res) {
+    res.status(301).redirect(`https://mastodon.pandapa.ws${req.originalUrl}`)
+    }
+);
 
 // Moreso pranking links than anything else
 app.get("/admin", (req, res) => {
