@@ -5,34 +5,32 @@
         <title>Robyn-Dawn</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Icon -->
-        <link rel="icon" href="/art/blankie">
+        <link rel="icon" href="/public/art/wah_parade.png">
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Tilt+Neon&display=swap" rel="stylesheet">
         <!-- Import local files -->
-        <link rel="stylesheet" href="/terminal.css">
-        <script src="/terminal.js"></script>
+        <link rel="stylesheet" href="/public/static/terminal.css">
+        <!-- <script src="/terminal.js"></script> --> <!-- This is currently unused -->
         <!-- Bulma -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
         <!-- Meta (for embeds )-->
         <meta property="og:title" content="Robyn-Dawn">
-        <meta property="og:description" content="// he/they (m/m gay, andro pref)
-// Fullstack Engineer
+        <meta property="og:description" content="// they/them (non-binary, pansexual)
+// Full-time Student & Fullstack Engineer
 // 11th May 🎂
-// Full-time Student, Emo, and Somehow Making It Through Life.">
-        <meta property="og:image" content="/art/comfy-noise">
+// See here for information and blog posts.">
+        <meta property="og:image" content="/public/art/comfy-noise">
         <meta property="og:url" content="https://pandapa.ws/">
         <meta property="og:site_name" content="Robyn-Dawn">
         <meta property="og:type" content="website">
         <meta property="og:locale" content="en_GB">
-        <meta name="theme-color" content="#CAB8FF">
-        <!-- FontAwesome (sadly) -->
-        <script src="https://kit.fontawesome.com/c5c07820bb.js" crossorigin="anonymous"></script>
+        <meta name="theme-color" content="#7071E8">
+        <!-- Basicons.xyz - cuz FontAwesome can suck my androgynous dick. -->
+        <script async src="https://basicons.xyz/embed.js"> </script>
         <!-- Confetti -->
         <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
-        <!-- Cloudflare. -->
-        <meta name="cf-2fa-verify" content="OQWlStRZH6XHM1vbJcFb">
     </head>
 
     <body class="dark" id="body">
@@ -44,137 +42,63 @@
                 <div class="container">
                     <div class="columns my-2 mx-2">
                         <figure class="image column is-1 mt-1">
-                            <img src="/art/comfy-noise" id="avatar">
+                            <img src="/public/art/comf-noise.png" id="avatar">
                         </figure>
                         <!-- Vertically align with the center of the image -->
                         <div class="column is-11 mt-2">
                             <h1 class="title is-3 pastel-purple terminal">Robyn-Dawn</h1>
-                            <h2 class="subtitle is-5 pastel-blue terminal">Fullstack Engineer and Wannabe Pilot</h2>
-                            <p class="is-7 pastel-blue terminal" id="pronouns">he/they (androgynous preference)</p>
-                            <div id="weather">
-                                <span class="icon is-small">
-                                    <i id="weather-icon" class="fas fa-cloud-sun pastel-green"></i>
-                                </span>
-                                <span class="pastel-green terminal" id="weather-text">Loading...</span>
-                            </div>
-                            <div> 
-                                <span class="icon is-small">
-                                    <i id="time-icon" class="fas fa-clock pastel-green"></i>
-                                </span>
-                                <span class="pastel-green terminal" id="time-text">Loading...</span>
-                            </div>
-                            <div>
-                                <span class="icon is-small">
-                                    <i id="spotify-icon" class="fas fa-play-circle pastel-green"></i>
-                                </span>
-                                <span class="pastel-green terminal" id="playing-text">Loading...</span>    
-                            </div>
+                            <h2 class="subtitle is-5 pastel-blue terminal">Full-Time Student & Fullstack Engineer</h2>
+                            <p class="is-7 pastel-blue terminal" id="pronouns">they/them (non-binary / pansexual)</p>
+                            <p id="time-text" class="pastel-blue terminal">It is currently 00:00.</p>
                         </div>
                     </div>
                 </div>
         </section>
 
-        <div>
-            <div class="columns my-2 mx-2">
-                <div class="column is-12" style="text-align:center;">
-                    <!-- <p class="title is-4 gradient-text terminal" id="socials">~/socials.txt</p> -->
-                    <p class="subtitle is-6"> <!-- Just so they dont try and sue me :p -->
-                        <!-- Use FA for icons -->
-<!--                         <a href="https://discord.gg/Mqcgca8" class="gradient-text" target="_blank">
-                            <span class="icon is-small">
-                                <i class="fab fa-discord"></i>
-                            </span>
-                            Frostbyte's Space Station
-                        </a> -->
-                        <a href="/links/github" class="pastel-blue" target="_blank">
-                            <span class="icon is-small">
-                                <i class="fab fa-github"></i>
-                            </span>
-                            @ThePandaParade
-                        </a>
-                        <a href="/links/mastodon" class="pastel-blue" target="_blank">
-                            <span class="icon is-small">
-                                <i class="fab fa-mastodon"></i>
-                            </span>
-                            @me@pandapa.ws
-                        </a>
-                        <a href="/links/patreon" class="pastel-blue" target="_blank">
-                            <span class="icon is-small">
-                                <i class="fab fa-patreon"></i>
-                            </span>
-                            @robynsnest
-                        </a>
-                        <a href="/links/steam" class="pastel-blue" target="_blank">
-                            <span class="icon is-small">
-                                <i class="fab fa-steam"></i>
-                            </span>
-                            @ThePandaParade
-                        </a>
-                        <a href="/links/telegram" class="pastel-blue" target="_blank">
-                            <span class="icon is-small">
-                                <i class="fab fa-telegram"></i>
-                            </span>
-                            @robynsspacestation
-                        </a>
-                        <a href="/links/throne" class="pastel-blue" target="_blank">
-                            <span class="icon is-small">
-                                <i class="fa-solid fa-money-bill"></i>
-                            </span>
-                            @WhenDawnEnds
-                        </a>
-                        <a href="/links/twitch" class="pastel-blue" target="_blank">
-                            <span class="icon is-small">
-                                <i class="fab fa-twitch"></i>
-                            </span>
-                            @TheWahParade
-                        </a>
-                        <a href="/links/twitter" class="pastel-blue" target="_blank">
-                            <span class="icon is-small">
-                                <i class="fab fa-twitter"></i>
-                            </span>
-                            @TheWahParade
-                        </a>
-                    </p>
-                </div>
+        <div class="columns my-2 mx-2">
+            <div class="column is-12" style="text-align:center;">
+                <p class="title is-4 pastel-purple terminal" id="posts">Posts</p>
+                <p class="subtitle is-6 has-text-white">
+                    <a class="pastel-blue px-1 terminal" href="/blog/a-month-on">2024-??-??: The Exodus: One Month Later</a> <br>
+                    <a class="pastel-blue px-1 terminal" href="/blog/exodus">2024-01-11: The Exodus: My Transition towards Linux</a>
+                </p>
             </div>
         </div>
-
 
         <div class="columns my-2 mx-2">
             <div class="column is-12" style="text-align:center;">
                 <p class="title is-4 pastel-purple terminal" id="about-me">About Me</p>
                 <p class="subtitle is-6 pastel-blue terminal">
-                    I'm a fullstack engineer, wannabe pilot, EAS and SCP enthusiast and sandbox gamer from
-                    Lincolnshire, UK.
-                    You can <a href="about" class="pastel-green">learn more about me on my about page.</a>
+                    You can learn more about me on <a href="about" class="pastel-green">my about page.</a>
                 </p>
             </div>
         </div>
-
 
         <div class="columns my-2 mx-2">
             <div class="column is-12" style="text-align:center;">
                 <p class="title is-4 pastel-purple terminal" id="projects">Projects</p>
                 <p class="subtitle is-6 has-text-white">
-                    <a class="pastel-blue px-1 terminal" href="/blog/exodus">The Exodus (blog post)</a>
+                    <a class="pastel-blue px-1 terminal" href="/">Nothing.</a>
                 </p>
             </div>
         </div>
 
         <div class="columns my-2 mx-2">
             <div class="column is-12" style="text-align:center;">
-                <p class="title is-4 pastel-purple terminal" id="Holidays">Holidays</p>
+                <p class="title is-4 pastel-purple terminal" id="socials">Socials</p>
                 <p class="subtitle is-6 pastel-blue terminal">
-                    I do frequently travel, as of such, I do have days where I am unavailable. These can be found 
-                    <a href="holidays" class="pastel-green">here</a>
+                    <a class="pastel-blue px-1 py-6 terminal" href="https://mastodon.pandapa.ws/@me" target="_blank">Mastodon: @me@pandapa.ws</a> <br>
+                    <a class="pastel-blue px-1 py-6 terminal" href="https://t.me/robynsspacestation" target="_blank">Telegram: @robynsspacestation</a> <br>
+                    <a class="pastel-blue px-1 py-6 terminal" href="https://github.com/ThePandaParade" target="_blank">GitHub: @ThePandaParade</a> <br>
+                    <a class="pastel-blue px-1 py-6 terminal" href="https://throne.com/ThePandaParade" target="_blank">Throne: @ThePandaParade</a>
                 </p>
             </div>
         </div>
-
     <script>
         // On my birthday, confetti will fall from the top of the page.
         // Get the current date. If it is the 11th May, then continue.
         var date = new Date();
+        //var date = new Date("2022-05-11"); // For testing purposes.
         if (date.getDate() == 11 && date.getMonth() == 4) {
         //if (true) {
             const confetti = new JSConfetti();
@@ -188,68 +112,17 @@
             document.getElementById("birthday-easter-egg").remove();
         }
 
-        // And now to Andy with the weather.
-        // We fetch the weather and time from the /weather and /time endpoints.
-        // We then set the text of the elements to the data we get from the endpoints.
+        // Get the current time and display it on the page.
+        // We need to get the time in Europe/London timezone.
+        // We also need to display it in 24-hour format, and including the currently active timezone.
+        var options = { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', hour12: false };
+        var time = new Date().toLocaleTimeString('en-GB', options);
+        document.getElementById("time-text").innerHTML = "It is currently " + time + ".";
 
-        fetch("/internal/weather")
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById("weather-text").innerHTML = `${data.temp}°C, ${data.weather}`;
-                document.getElementById("weather-icon").className = data.icon + " pastel-green";
-            });
-        fetch("/internal/time")
-                .then(response => response.json())
-                .then(data => {
-                    // Get current timezone on the server.
-                    let tz = Intl.DateTimeFormat().resolvedOptions().timeZone
-                    if (data.abbreviation == "BST" & tz.includes("Etc")) { // ETC Timezones redirect to UTC
-                        data.hour = new Number(data.hour) + 1
-                        data.hour = data.hour.toString().padStart(2, "0")
-                    }
-                    document.getElementById("time-text").innerHTML = `${data.hour}:${data.minute} ${data.abbreviation}`;
-        });
-        // Amendment: Spotify is now a thing.
-        // If there is an error, we simply hide the element (as it is not required). If there is no error, the response will be in plain HTML.
-        // We will also hide the element if the response is 404, as this means the Spotify handler is not running.
-        // The endpoint this time is /spotify/run.
-        fetch("/spotify/run")
-            .then(response => {
-                if (response.status == 200) {
-                    return response.text();
-                }
-                else {
-                    document.getElementById("spotify-icon").style.display = "none";
-                    document.getElementById("playing-text").style.display = "none";
-                }
-            })
-            .then(data => {
-                if (data != undefined) {
-                    document.getElementById("playing-text").innerHTML = data;
-                }
-            });
-
-        // Set a loop to update the time every minute.
+        // Now make this update every ten seconds.
         setInterval(function() {
-            fetch("/internal/time")
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("time-text").innerHTML = `${data.hour}:${data.minute} ${data.abbreviation}`;
-                });
-            fetch("/internal/weather")
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById("weather-text").innerHTML = `${data.temp}°C, ${data.weather}`;
-                document.getElementById("weather-icon").className = data.icon + " pastel-green";
-            });
-            // Check if the Spotify element is hidden. If it is, then we don't need to update it.
-            if (document.getElementById("spotify-icon").style.display != "none") {
-                fetch("/spotify/run")
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById("playing-text").innerHTML = data;
-                    });
-            }
-        }, 60000);
+            var time = new Date().toLocaleTimeString('en-GB', options);
+            document.getElementById("time-text").innerHTML = "It is currently " + time + ".";
+        }, 10000);
     </script>
 </html>
