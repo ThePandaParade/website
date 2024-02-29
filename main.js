@@ -36,6 +36,16 @@ server.get('/', async (request, reply) => {
     return reply.sendFile('index.html');
 });
 
+// Route for serving mostly the /info embed, which redirects to root if the user is not a bot
+server.get('/info', async (request, reply) => {
+    if (request.headers['user-agent'].includes('Discordbot')) {
+        return reply.sendFile('info.html');
+    } else {
+        return reply.redirect('/');
+    }
+
+});
+
 // On an error, redirect to the error page
 server.setErrorHandler(async (error, request, reply) => {
     return reply.redirect('/error/' + error.statusCode);
