@@ -15,7 +15,6 @@
         <script src="/terminal.js"></script>
         <!-- Bulma -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
-
     </head>
 
     <body class="is-overlay dark" id="body">
@@ -36,6 +35,7 @@
     </body>
 
     <script>
+        var url = window.location.pathname.replace("/bleeding","")
         // Get the status code from the URL
         var status_code = url.split("/")[2];
         // Get the status info
@@ -105,7 +105,7 @@
         //document.getElementById("go-back").innerHTML = "<a href=\"/bleeding\">Back to saftey!</a>";
         // Set the fun fact
         var facts = [
-            "Fun fact: This is the <del>second</del> third time I've redone this website in 4 years.",
+            "Fun fact: This is the third time I've redone this website in 4 years.",
             // "Fun fact: despite being a computer scientist, I'm not very good at front end. Hence why I don't say I'm full stack.",
             "Fun fact: I have been a furry since 2018. I'm not ashamed of it, but I don't really talk about it.",
             "Fun fact: I love Sheldon Cooper from <a href=\"https://en.wikipedia.org/wiki/The_Big_Bang_Theory\" target=\"_blank\">The Big Bang Theory</a>. I'll fight you on this.",

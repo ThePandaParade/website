@@ -46,6 +46,16 @@ server.get('/info', async (request, reply) => {
 
 });
 
+// Route for maintenance.html
+server.get('/maintenance', async (request, reply) => {
+    return reply.sendFile('maintenance.html');
+});
+
+// Route for about.html
+server.get('/about', async (request, reply) => {
+    return reply.sendFile('about.html');
+});
+
 // On an error, redirect to the error page
 server.setErrorHandler(async (error, request, reply) => {
     return reply.redirect('/error/' + error.statusCode);
@@ -71,6 +81,11 @@ server.get('/.well-known/matrix/server', async (request, reply) => {
 /* server.get(['/.well-known/webfinger*', '/.well-known/host-meta*', '/.well-known/nodeinfo*'], async (request, reply) => {
     return reply.redirect('https://mastodon.pandapa.ws' + request.raw.url);
 }); */
+
+// Robots.txt
+server.get('/robots.txt', async (request, reply) => {
+    return reply.sendFile('robots.txt');
+});
 
 // Start the server
 const start = async () => {
