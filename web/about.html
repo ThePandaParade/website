@@ -49,51 +49,13 @@
                             <h1 class="title is-3 pastel-purple terminal">Robyn-Dawn</h1>
                             <h2 class="subtitle is-5 pastel-blue terminal">Full-Time Student & Fullstack Engineer</h2>
                             <p class="is-7 pastel-blue terminal" id="pronouns">they/them (non-binary / pansexual)</p>
-                            <p id="time-text" class="pastel-blue terminal">It is currently 00:00.</p>
                         </div>
                     </div>
                 </div>
         </section>
 
-        <div class="columns my-2 mx-2">
-            <div class="column is-12" style="text-align:center;">
-                <p class="title is-4 pastel-purple terminal" id="posts">Posts</p>
-                <p class="subtitle is-6 has-text-white">
-                    <a class="pastel-blue px-1 terminal" href="/blog/a-month-on">2024-??-??: The Exodus: One Month Later</a> <br>
-                    <a class="pastel-blue px-1 terminal" href="/blog/exodus">2024-01-11: The Exodus: My Transition towards Linux</a>
-                </p>
-            </div>
-        </div>
-
-        <div class="columns my-2 mx-2">
-            <div class="column is-12" style="text-align:center;">
-                <p class="title is-4 pastel-purple terminal" id="about-me">About Me</p>
-                <p class="subtitle is-6 pastel-blue terminal">
-                    You can learn more about me on <a href="about" class="pastel-green">my about page.</a>
-                </p>
-            </div>
-        </div>
-
-        <div class="columns my-2 mx-2">
-            <div class="column is-12" style="text-align:center;">
-                <p class="title is-4 pastel-purple terminal" id="projects">Projects</p>
-                <p class="subtitle is-6 has-text-white">
-                    <a class="pastel-blue px-1 terminal" href="/">Nothing.</a>
-                </p>
-            </div>
-        </div>
-
-        <div class="columns my-2 mx-2">
-            <div class="column is-12" style="text-align:center;">
-                <p class="title is-4 pastel-purple terminal" id="socials">Socials</p>
-                <p class="subtitle is-6 pastel-blue terminal">
-                    <a class="pastel-blue px-1 py-6 terminal" href="https://mastodon.pandapa.ws/@me" target="_blank">Mastodon: @me@pandapa.ws</a> <br>
-                    <a class="pastel-blue px-1 py-6 terminal" href="https://t.me/robynsspacestation" target="_blank">Telegram: @robynsspacestation</a> <br>
-                    <a class="pastel-blue px-1 py-6 terminal" href="https://github.com/ThePandaParade" target="_blank">GitHub: @ThePandaParade</a> <br>
-                    <a class="pastel-blue px-1 py-6 terminal" href="https://throne.com/ThePandaParade" target="_blank">Throne: @ThePandaParade</a>
-                </p>
-            </div>
-        </div>
+        <p class="is-4 mx-3 pastel-purple terminal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, alias voluptatum saepe nostrum illo suscipit tempore tempora, hic sit praesentium corrupti ipsam sunt porro laudantium. Consectetur soluta temporibus unde! Explicabo!</p>
+    
     <script>
         // On my birthday, confetti will fall from the top of the page.
         // Get the current date. If it is the 11th May, then continue.
@@ -111,18 +73,5 @@
             // Delete the div if it is not my birthday.
             document.getElementById("birthday-easter-egg").remove();
         }
-
-        // Get the current time and display it on the page.
-        // We need to get the time in Europe/London timezone.
-        // We also need to display it in 24-hour format, and including the currently active timezone.
-        var options = { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', hour12: false };
-        var time = new Date().toLocaleTimeString('en-GB', options);
-        document.getElementById("time-text").innerHTML = "It is currently " + time + ".";
-
-        // Now make this update every ten seconds.
-        setInterval(function() {
-            var time = new Date().toLocaleTimeString('en-GB', options);
-            document.getElementById("time-text").innerHTML = "It is currently " + time + ".";
-        }, 10000);
     </script>
 </html>

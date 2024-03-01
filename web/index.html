@@ -20,6 +20,7 @@
         <meta property="og:description" content="// they/them (non-binary, pansexual)
 // Full-time Student & Fullstack Engineer
 // 11th May 🎂
+// Home of ThePandaParade / TheWahParade and projects.
 // See here for information and blog posts.">
         <meta property="og:image" content="/public/art/comfy-noise">
         <meta property="og:url" content="https://pandapa.ws/">
@@ -118,12 +119,12 @@
         // We also need to display it in 24-hour format, and including the currently active timezone.
         var options = { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', hour12: false };
         var time = new Date().toLocaleTimeString('en-GB', options);
-        document.getElementById("time-text").innerHTML = "It is currently " + time + ".";
+        document.getElementById("time-text").innerHTML = "It is currently " + time + " in London.";
 
         // Now make this update every ten seconds.
         setInterval(function() {
             var time = new Date().toLocaleTimeString('en-GB', options);
-            document.getElementById("time-text").innerHTML = "It is currently " + time + ".";
+            document.getElementById("time-text").innerHTML = "It is currently " + time + " in London.";
         }, 10000);
     </script>
 </html>
