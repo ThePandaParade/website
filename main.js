@@ -28,6 +28,13 @@ server.register(require('@fastify/static'), {
   decorateReply: false
 });
 
+// ...and /web/projects - one day I will make this look better, I promise
+server.register(require('@fastify/static'), {
+  root: path.join(__dirname, "web", "projects"),
+  prefix: "/projects/",
+  decorateReply: false
+});
+
 // ** Define routes ** \\
 // Because we're on L32 and we have yet to do anything proper.
 
@@ -54,6 +61,11 @@ server.get('/maintenance', async (request, reply) => {
 // Route for about.html
 server.get('/about', async (request, reply) => {
     return reply.sendFile('about.html');
+});
+
+// Route for dms.html
+server.get('/dms', async (request, reply) => {
+    return reply.sendFile('dms.html');
 });
 
 // On an error, redirect to the error page
