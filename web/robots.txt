@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /public
+Disallow: /maintenance.html
+Disallow: /error
+Disallow: /info
+Disallow: /about
+Allow: /

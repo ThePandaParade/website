@@ -1,38 +1,16 @@
 {
   "name": "website",
   "version": "1.0.0",
-  "description": "Code for my website.",
+  "description": "Website rewrite - 2024 edition",
   "main": "main.js",
-  "dependencies": {
-    "bulma": "^0.9.0",
-    "cookie-parser": "^1.4.6",
-    "dotenv": "^16.0.1",
-    "express": "^4.17.1",
-    "express-fileupload": "^1.2.0",
-    "file-type": "^12.4.0",
-    "geoip-lite": "^1.4.7",
-    "node-cache": "^5.1.2",
-    "node-fetch-commonjs": "^3.2.4",
-    "path": "^0.12.7",
-    "read-chunk": "^3.2.0",
-    "twitter-api-v2": "^1.12.3"
-  },
   "scripts": {
-    "run": "node main.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/WhenDawnEnds/image-server.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/WhenDawnEnds/image-server/issues"
-  },
-  "homepage": "https://github.com/WhenDawnEnds/image-server#readme",
-  "optionalDependencies": {
-    "chalk": "^4.1.2",
-    "fastify": "^4.23.2",
-    "spotify-web-api-node": "^5.0.2"
+  "dependencies": {
+    "@fastify/static": "^7.0.1",
+    "dotenv": "^16.4.4",
+    "fastify": "^4.26.1"
   }
 }
