@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= title %></title>
+        <link rel="icon" href="/public/art/wah_parade.png">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <!-- Bulma -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+        <!-- Icons -->
+        <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet"/>
+        <!-- OpenProps -->
+        <link rel="stylesheet" href="https://unpkg.com/open-props">
+    </head>
+    <body>
+        <!-- Lock things left on desktop, center on mobile -->
+        <div class="container">
+            <section class="section">
+                <h1 class="title has-text-white"><%= title %></h1>
+                <h2 class="subtitle has-text-white"><%= brief %></h2>
+                <!-- Image-->
+                <figure class="image is-128x128">
+                    <!-- Placeholder image -->
+                    <img src="https://bulma.io/images/placeholders/128x128.png">
+                </figure>
+                <h3 class="has-text-white"><%= description %></h3>
+    </body>
+    <style>
+        html {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: black;
+        }
+
+        body {
+            background-image: './public/art/branding-overlay.png' !important;
+        }
+    </style>
+</html>

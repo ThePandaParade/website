@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    labels:
+      - "lazytainer.group=lazytainer"
+  
+  lazytainer:
+    image: ghcr.io/vmorganp/lazytainer:master
+    ports:
+      - 5000:5000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    labels:
+      - "lazytainer.group=lazytainer"

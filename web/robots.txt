@@ -1,6 +1,6 @@
 User-agent: *
 Disallow: /public
-Disallow: /maintenance.html
+Disallow: /maintenance
 Disallow: /error
 Disallow: /info
 Disallow: /about
