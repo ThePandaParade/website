@@ -56,6 +56,10 @@ server.register(require('./routers/links.js'), { prefix: '/l' });
 server.register(require('./routers/octashibe'), { prefix: '/octashibe' });
 server.register(require('./routers/octashibe'), { prefix: '/os' });
 
+// Import the blog router
+server.register(require('./routers/blog'), { prefix: '/blog' });
+server.register(require('./routers/blog'), { prefix: '/b' });
+
 // Add middleware to block ByteSpider
 server.addHook('preHandler', async (request, reply) => {
   if (request.headers['user-agent'].includes('ByteSpider')) {
@@ -77,11 +81,6 @@ server.get('/info', async (request, reply) => {
         return reply.redirect('/');
     }
 
-});
-
-// Route for maintenance.html
-server.get('/maintenance', async (request, reply) => {
-    return reply.sendFile('maintenance.html');
 });
 
 // Route for about.html

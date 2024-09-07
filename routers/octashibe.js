@@ -11,12 +11,15 @@ function markdownToHTML(text) {
     .toString("UTF-8");
 }
 module.exports = function (fastify, opts, done) {
+
     fastify.get('/brief', async (request, reply) => {
         return reply.sendFile('octashibe/brief.html');
     });
+
     fastify.get('/about', async (request, reply) => {
         return reply.sendFile('octashibe/about.html');
     });
+    
     fastify.get('/projects/create_automative', async (request, reply) => {
         return reply.view('project.ejs', 
             {
@@ -57,6 +60,7 @@ module.exports = function (fastify, opts, done) {
             }
         );
     });
+
     fastify.get('/projects/automative', async (request, reply) => {
         return reply.redirect('/projects/create_automative');
     });
@@ -64,9 +68,11 @@ module.exports = function (fastify, opts, done) {
     fastify.get('/maintenance', async (request, reply) => {
         return reply.sendFile('octashibe/maintenance.html');
     });
+
     fastify.get('/', async (request, reply) => {
         return { hello: 'world', "dir": __dirname, "path": path_root};
     });
+
     // Brand spankin new error page and functionality
     fastify.setErrorHandler(async (error, request, reply) => {
         //console.log(error);

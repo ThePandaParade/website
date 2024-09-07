@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html style="background-color: #5d008a;" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Robyn</title>
+        <link rel="icon" href="/public/art/wah_parade.png">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <!-- Bulma -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+        <!-- Icons -->
+        <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet"/>
+        <!-- OpenProps -->
+        <link rel="stylesheet" href="https://unpkg.com/open-props">
+        <link rel="stylesheet" href="https://unpkg.com/open-props/masks.edges.min.css">
+    </head>
+    <body>
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title has-text-white">Robyn</h1>
+                    <h2 class="subtitle has-text-white">The red panda's blog.</h2>
+                    <div class="buttons has-addons">
+                        <a href="/" class="button is-primary is-outlined">
+                            <span class="icon">
+                                <i class="lni lni-arrow-left"></i>
+                            </span>
+                            <span>Home</span>
+                        </a>
+                        <a href="/blog/new" class="button is-primary is-outlined">
+                            <span class="icon">
+                                <i class="lni lni-plus"></i>
+                            </span>
+                            <span>New Post</span>
+                        </a>
+                        <button class="button is-info is-outlined">
+                            <span class="icon">
+                                <i class="lni lni-information"></i>
+                            </span>
+                            <span>Post Count: <%= posts.length %></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <div class="posts">
+                <% for (const post of posts) { %>
+                <div class="card my-6">
+                    <div class="card-header">
+                        <h2 class="card-header-title"><%= post.friendly %></h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="content">
+                            <p><%= post.summary %><br><%= post.readTime %> <%= post.pluralNoun %> read time.</p>
+                            <!-- Tags -->
+                            <div class="tags">
+                                <% for (const tag of post.tags) { %>
+                                    <span class="tag is-info"><%= tag %></span>
+                                <% } %>
+                           </div>
+                        </div>
+                        <p><time datetime="<%= post.date %>"><%= post.date %></time> - <%= post.author %></p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/blog/<%= post.date %>" class="card-footer-item">Read More</a>
+                        <a href="#" class="card-footer-item">Copy URL</a>
+                    </div>
+                </div>
+                <% } %>
+                <div class="card my-6">
+                    <div class="card-header">
+                        <h2 class="card-header-title">You've reached the end!</h2>
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>
