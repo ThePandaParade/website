@@ -8,6 +8,14 @@ dotenv.config();
 // Initialize the server
 const server = fastify();
 
+if (process.env.REDIS_ENABLED == "true") {
+  const { createClient } = require('redis');
+  // Initalize the Redis client
+  const redis = createClient(`redis://${process.env.REDIS_USER}:${process.env.REDIS_PASS}@${process.env.REDIS_URL}:${process.env.REDIS_PORT}`);
+  // 🌠jank🌠
+  redis.on('error', (err) => console.log('Redis error: ' + err));
+}
+
 // Import @fastify/static for the sendFile function
 server.register(require('@fastify/static'), {
   root: path.join(__dirname, "web"),
@@ -28,19 +36,13 @@ server.register(require('@fastify/static'), {
   decorateReply: false
 });
 
-// ...and /web/projects - one day I will make this look better, I promise
-/* server.register(require('@fastify/static'), {
-  root: path.join(__dirname, "web", "projects"),
-  prefix: "/projects/",
-  decorateReply: false
-}); */
-
 // Add a register for sites that need to be served under ejs (projects/blog)
 server.register(require('@fastify/view'), {
   engine: {
     ejs: require('ejs')
   },
   root: path.join(__dirname, "web", "octashibe", "templates"),
+  production: process.env.PRODUCTION
 });
 
 // ** Define routes ** \\
@@ -92,18 +94,6 @@ server.get('/dms', async (request, reply) => {
     return reply.sendFile('dms.html');
 });
 
-// On an error, redirect to the error page
-/* server.setErrorHandler(async (error, request, reply) => {
-    return reply.redirect('/error/' + error.statusCode);
-});
-
-server.setNotFoundHandler(async (request, reply) => {
-    return reply.redirect('/error/404');
-});
-server.get('/error/:code', async (request, reply) => {
-    return reply.sendFile('error.html');
-}) */
-
 // Robots.txt
 server.get('/robots.txt', async (request, reply) => {
     return reply.sendFile('robots.txt');
@@ -112,6 +102,16 @@ server.get('/robots.txt', async (request, reply) => {
 // Start the server
 const start = async () => {
   try {
+    if (!process.env.PORT) {
+      console.warn('No PORT environment variable found. Defaulting to 5000.');
+    }
+    if (process.env.REDIS_ENABLED == "true") {
+      console.log('Redis enabled. Using ' + process.env.REDIS_URL);
+      server.decorate('redis', redis);
+    } else {
+      console.log('Redis disabled. Set REDIS_ENABLED to true to enable.');
+      console.warn('Blog and project pages will not work or init.')
+    }
     await server.listen({port: process.env.PORT || 5000});
     console.log(`Server is running on ${server.server.address().port}`);
   } catch (err) {

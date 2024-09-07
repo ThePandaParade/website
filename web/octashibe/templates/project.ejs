@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><%= title %></title>
-        <link rel="icon" href="/public/art/wah_parade.png">
+        <title><%= title %> - Robyn/ThePandaParade</title>
+        <link rel="icon" href="<%= icon %>">
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,28 +15,112 @@
         <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet"/>
         <!-- OpenProps -->
         <link rel="stylesheet" href="https://unpkg.com/open-props">
+        <link rel="stylesheet" href="https://unpkg.com/open-props/masks.edges.min.css">
     </head>
-    <body>
-        <!-- Lock things left on desktop, center on mobile -->
-        <div class="container">
+    <body class="drip-right">
+        <a href="projects" class="button is-link is-rounded is-small is-responsive mx-2 my-2">
+            <span class="icon">
+                <i class="lni lni-arrow-left"></i>
+            </span>
+            <span>Back to main page</span>
+        </a>
+        <div class="container is-fluid drip-bottom">
             <section class="section">
-                <h1 class="title has-text-white"><%= title %></h1>
-                <h2 class="subtitle has-text-white"><%= brief %></h2>
-                <!-- Image-->
-                <figure class="image is-128x128">
-                    <!-- Placeholder image -->
-                    <img src="https://bulma.io/images/placeholders/128x128.png">
-                </figure>
-                <h3 class="has-text-white"><%= description %></h3>
+                <section class="hero">
+                    <div class="hero-body">
+                        <div class="container">
+                            <div class="columns">
+                                <div class="column is-1">
+                                    <figure class="image is-128x128">
+                                        <img src="<%= icon %>">
+                                    </figure>
+                                </div>
+                                <div class="column mx-6">
+                                    <h1 class="title has-text-white">
+                                        <%= title %>
+                                        <% if (status == 'indev') { %>
+                                            <span class="tag is-warning is-light">In Development</span>
+                                        <% } else if (status == 'active') { %>
+                                            <span class="tag is-success is-light">Active</span>
+                                        <% } else if (status == 'eol') { %>
+                                            <span class="tag is-danger is-light">Deprecated/End Of Life</span>
+                                        <% } %>
+                                    </h1>
+                                    <h2 class="subtitle has-text-white">
+                                        <%- brief %>
+                                        <% if (license) { %>
+                                            <div class="tags has-addons">
+                                                <span class="tag is-dark">License</span>
+                                                <span class="tag is-light"><%= license %></span>
+                                            </div>
+                                        <% } %>
+                                    </h2>
+                                    <!-- Tags -->
+                                    <div class="tags">
+                                        <% tags.forEach(tag => { %>
+                                            <span class="tag is-info"><%= tag %></span>
+                                        <% }); %>
+                                        <% if (tags.length == 0) { %>
+                                            <span class="tag is-info">No tags</span>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="columns">
+                    <div class="column is-5">
+                        <figure class="image">
+                            <!-- Placeholder image -->
+                            <img src="<%= image %>" style="width: 720px; height: 512px;" >
+                        </figure>
+                    </div>
+                    <div class="column">
+                        <h3 class="has-text-white"><%- description %></h3>
+                        <div class="buttons are-medium my-4">
+                            <a class="button is-primary is-responsive" href="<%= link %>">
+                                <span class="icon">
+                                    <i class="lni lni-cloud-download"></i>
+                                </span>
+                                <span><%= downloadButtonText %></span>
+                            </a>
+                            <a class="button is-primary is-responsive" href="<%= source %>">
+                                <span class="icon">
+                                    <i class="lni lni-github"></i>
+                                </span>
+                                <span>View Source</span>
+                            </a>
+                        </div>
+                </div>
+            </section>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="content has-text-centered has-text-white">
+                    <p>
+                        C 2024 The(Wah/Panda)Parade. Website under the MIT License. Contribute on <a href="/l/contribute">GitHub</a>.<br><br>
+                    </p>
+                </div>
+            </div>
+        </footer>
     </body>
     <style>
         html {
             font-family: 'Noto Sans', sans-serif;
             background-color: black;
+            background-image: '/public/art/branding-overlay.png';
+            background-repeat: repeat;
         }
-
-        body {
-            background-image: './public/art/branding-overlay.png' !important;
+        .drip-right {
+            background-color: #5d008a;
+            mask: var(--mask-edge-drip-right);
+            -webkit-mask: var(--mask-edge-drip-right);
+        }
+        .drip-bottom {
+            background-color: #5d008a;
+            mask: var(--mask-edge-drip-bottom);
+            -webkit-mask: var(--mask-edge-drip-bottom);
         }
     </style>
 </html>
