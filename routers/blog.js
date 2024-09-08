@@ -42,6 +42,9 @@ module.exports = function (fastify, opts, done) {
         });
         return reply.view('blog-list.ejs', { posts: Object.values(pages).reverse() });
     });
+    fastify.get('/new', async (request, reply) => {
+        return reply.sendFile('maintenance.html'); // TODO: Authentication and this page.
+    });
     fastify.get('/:page', async (request, reply) => {
         // Check if the page exists
         const page = Object.values(pages).find(post => post.date == request.params.page);
