@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html style="background-color: #3d005c;" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Robyn</title>
+        <link rel="icon" href="/public/art/wah_parade.png">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <!-- Bulma -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+        <!-- Icons -->
+        <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet"/>
+        <!-- OpenProps -->
+        <link rel="stylesheet" href="https://unpkg.com/open-props">
+        <link rel="stylesheet" href="https://unpkg.com/open-props/masks.edges.min.css">
+    </head>
+    <body>
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title has-text-white">Robyn</h1>
+                    <h2 class="subtitle has-text-white">All my projects in a nice table for your pleasure.</h2>
+                    <div class="buttons has-addons">
+                        <a href="/" class="button is-primary is-outlined">
+                            <span class="icon">
+                                <i class="lni lni-arrow-left"></i>
+                            </span>
+                            <span>Home</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <div class="project-list">
+                <!-- Table format with cards -->
+                 <div class="columns is-multiline">
+                    <% for (let project of projects) { %>
+                        <div class="column is-4">
+                            <div class="card shadow light">
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img src="<%= project.image %>" alt="<%= project.title %>">
+                                    </figure>
+                                </div>
+                                <div class="card-content">
+                                    <div class="media">
+                                        <div class="media-content">
+                                            <p class="title is-4"><%= project.title %></p>
+                                            <p class="subtitle is-6"><%= project.brief %></p>
+                                            <% if (project.status == 'indev') { %>
+                                                <span class="tag is-warning">In Development</span>
+                                            <% } else if (project.status == 'active') { %>
+                                                <span class="tag is-success">Active</span>
+                                            <% } else if (project.status == 'paused') { %>
+                                                <span class="tag is-info">Paused</span>
+                                            <% } else if (project.status == 'eol') { %>
+                                                <span class="tag is-danger">Deprecated/End Of Life</span>
+                                            <% } %>
+                                            <div class="tags mt-2">
+                                                <% for (let tag of project.tags) { %>
+                                                    <span class="tag is-primary"><%= tag %></span>
+                                                <% } %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <a href="/projects/<%= project.id %>" class="button is-primary is-outlined">
+                                            <span class="icon">
+                                                <i class="lni lni-arrow-right"></i>
+                                            </span>
+                                            <span>View</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </body>
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+        }
+        .shadow {
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
+        }
+        .light {
+            background-color: rgb(235, 235, 235);
+        }
+    </style>
+</html>

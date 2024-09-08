@@ -53,6 +53,10 @@ server.register(require('./routers/octashibe'), { prefix: '/os' });
 server.register(require('./routers/blog'), { prefix: '/blog' });
 server.register(require('./routers/blog'), { prefix: '/b' });
 
+// Import the projects router
+server.register(require('./routers/projects'), { prefix: '/projects' });
+server.register(require('./routers/projects'), { prefix: '/p' });
+
 // Add middleware to block ByteSpider
 server.addHook('preHandler', async (request, reply) => {
   if (request.headers['user-agent'].includes('ByteSpider')) {
@@ -111,5 +115,13 @@ const start = async () => {
     process.exit(1);
   }
 };
+
+// On Ctrl+C, close the Redis connection if it exists
+process.on('SIGINT', () => {
+  if (process.env.REDIS_ENABLED == "true") {
+    redis.quit();
+  }
+  process.exit();
+});
 
 start();

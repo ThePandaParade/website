@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="background-color: #5d008a;" lang="en">
+<html style="background-color: #16161D;" lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,7 +49,7 @@
         <div class="container">
             <div class="posts">
                 <% for (const post of posts) { %>
-                <div class="card shadow my-6">
+                <div class="card shadow light my-6">
                     <div class="card-header">
                         <h2 class="card-header-title"><%= post.friendly %></h2>
                     </div>
@@ -89,9 +89,13 @@
             z-index: 1000;
             animation: var(--animation-slide-in-left);
         }
+        .light {
+            background-color: rgb(240, 240, 240);
+        }
     </style>
     <script>
         document.querySelectorAll('.card-footer-item').forEach((item) => {
+            if (!item.id.startsWith('copy-')) return;
             item.addEventListener('click', (e) => {
                 e.preventDefault();
                 const id = e.target.id.split('-').slice(1).join('-');

@@ -39,11 +39,13 @@
                                     <h1 class="title has-text-white">
                                         <%= title %>
                                         <% if (status == 'indev') { %>
-                                            <span class="tag is-warning is-light">In Development</span>
+                                            <span class="tag is-warning">In Development</span>
                                         <% } else if (status == 'active') { %>
-                                            <span class="tag is-success is-light">Active</span>
+                                            <span class="tag is-success">Active</span>
+                                        <% } else if (status == 'paused') { %>
+                                            <span class="tag is-info">Paused</span>
                                         <% } else if (status == 'eol') { %>
-                                            <span class="tag is-danger is-light">Deprecated/End Of Life</span>
+                                            <span class="tag is-danger">Deprecated/End Of Life</span>
                                         <% } %>
                                     </h1>
                                     <h2 class="subtitle has-text-white">
@@ -76,15 +78,22 @@
                         </figure>
                     </div>
                     <div class="column">
+                        <% if (status == 'indev') { %>
+                            <h2 class="has-text-warning has-text-weight-bold is-size-4">In Development! Everything may not be finalised, have bugs, or cause corruption! Use at risk.</h2>
+                        <% } else if (status == 'eol') { %>
+                            <h2 class="has-text-danger has-text-weight-bold is-size-4">This project is no longer maintained. Downloading is not advised unless you know what you are doing.</h2>
+                        <% } else if (status == 'paused') { %>
+                            <h2 class="has-text-info has-text-weight-bold is-size-4">This project is paused. Downloading is not advised unless you know what you are doing.</h2>
+                        <% } %>
                         <h3 class="has-text-white"><%- description %></h3>
                         <div class="buttons are-medium my-4">
-                            <a class="button is-primary is-responsive" href="<%= link %>">
+                            <a class="button is-responsive is-dark" href="<%= link %>">
                                 <span class="icon">
                                     <i class="lni lni-cloud-download"></i>
                                 </span>
                                 <span><%= downloadButtonText %></span>
                             </a>
-                            <a class="button is-primary is-responsive" href="<%= source %>">
+                            <a class="button s-responsive is-dark" href="<%= source %>">
                                 <span class="icon">
                                     <i class="lni lni-github"></i>
                                 </span>
@@ -95,10 +104,10 @@
             </section>
         </div>
         <footer>
-            <div class="container">
+            <div class="container pb-3">
                 <div class="content has-text-centered has-text-white">
                     <p>
-                        The(Wah/Panda)Parade 2024. Website under the MIT License. Contribute on <a href="/l/contribute">GitHub</a>.<br><br>
+                        The(Wah/Panda)Parade 2024. Website under the MIT License. Contribute on <a href="/l/contribute">GitHub</a>.
                     </p>
                 </div>
             </div>
@@ -112,12 +121,12 @@
             background-repeat: repeat;
         }
         .drip-right {
-            background-color: #5d008a;
+            background-color: #3d005c;
             mask: var(--mask-edge-drip-right);
             -webkit-mask: var(--mask-edge-drip-right);
         }
         .drip-bottom {
-            background-color: #5d008a;
+            background-color: #3d005c;
             mask: var(--mask-edge-drip-bottom);
             -webkit-mask: var(--mask-edge-drip-bottom);
         }
