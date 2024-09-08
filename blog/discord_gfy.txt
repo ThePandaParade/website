@@ -63,7 +63,7 @@ website. And yet, Discord is trying to sell it as a feature. When they added pro
 If they can make a banner a Nitro feature, they can almost certainly profit off people's identities. Well, <a href="https://lifehacker.com/tech/discord-data-sold-to-ai-and-law-enforcement">
 not like that hasn't happened before</a>, but then again that also wasn't directly Discord. Then again, Discord also doesn't delete your data when you delete a message,
 channel, or server. And with their recent bullshit "Clyde AI" that trains off messages sent on Discord, I wouldn't be surprised if they're selling intrusive levels of
-data to the highest bidder. Again, I am fully aware that this is the tech industry, and that this is standard practice (hi Facebook and Google)l, but Discord isn't
+data to the highest bidder. Again, I am fully aware that this is the tech industry, and that this is standard practice (hi Facebook and Google), but Discord isn't
 a megacorporation. It's a company that started off as a small project by a few people, and only had a huge spike due to the 2020 Coronavirus pandemic. And yet, they're
 adapting the same practices as the big greedy corporations.<br>
 There's also plenty of videos on YouTube that go into detail about Discord's moderation and their.. concerning, blind eye for certain communities. I don't know how

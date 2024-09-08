@@ -46,7 +46,6 @@ module.exports = function (fastify, opts, done) {
         // Check if the page exists
         const page = Object.values(pages).find(post => post.date == request.params.page);
         if (page) {
-            console.log(page);
             const long = fs.readFileSync(path.join(__dirname + "/../blog/" + page.long), 'utf8');
             return reply.view('blog.ejs', { post: page, long: long });
         } else {

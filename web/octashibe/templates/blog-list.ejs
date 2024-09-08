@@ -49,7 +49,7 @@
         <div class="container">
             <div class="posts">
                 <% for (const post of posts) { %>
-                <div class="card my-6">
+                <div class="card shadow my-6">
                     <div class="card-header">
                         <h2 class="card-header-title"><%= post.friendly %></h2>
                     </div>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="card-footer">
                         <a href="/blog/<%= post.date %>" class="card-footer-item">Read More</a>
-                        <a href="#" class="card-footer-item">Copy URL</a>
+                        <a href="#" class="card-footer-item" id="copy-<%= post.date %>">Copy URL</a>
                     </div>
                 </div>
                 <% } %>
@@ -78,4 +78,48 @@
                 </div>
             </div>
     </body>
+    <style>
+        .shadow {
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
+        }
+        .notification {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            animation: var(--animation-slide-in-left);
+        }
+    </style>
+    <script>
+        document.querySelectorAll('.card-footer-item').forEach((item) => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const id = e.target.id.split('-').slice(1).join('-');
+                const url = `${window.location.origin}/blog/${id}`;
+                navigator.clipboard.writeText(url);
+                // Show a toast
+                const toast = document.createElement('div');
+                toast.classList.add('notification', 'is-info', 'is-light', 'is-shadowless');
+                toast.innerHTML = `Copied URL to clipboard: ${url}`;
+                const progress = document.createElement('progress');
+                progress.classList.add('progress', 'is-small', 'is-info', 'is-light');
+                progress.value = 0;
+                toast.appendChild(progress);
+                document.body.appendChild(toast);
+                // Remove the toast after 3 seconds with the progress bar decreasing
+                let i = 0;
+                const interval = setInterval(() => {
+                    i += 0.005;
+                    progress.value = i;
+                    if (i >= 1) {
+                        clearInterval(interval);
+                        toast.style.animation = 'var(--animation-slide-out-right)';
+                        setTimeout(() => {
+                            document.body.removeChild(toast);
+                        }, 500);
+                    }
+                }, 30);
+            });
+        });
+    </script>
 </html>

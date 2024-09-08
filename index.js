@@ -29,13 +29,6 @@ server.register(require('@fastify/static'), {
   decorateReply: false
 });
 
-// ...and /web/blog/
-server.register(require('@fastify/static'), {
-  root: path.join(__dirname, "web", "blog"),
-  prefix: "/blog/",
-  decorateReply: false
-});
-
 // Add a register for sites that need to be served under ejs (projects/blog)
 server.register(require('@fastify/view'), {
   engine: {
