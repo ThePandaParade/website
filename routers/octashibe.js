@@ -5,11 +5,7 @@
 
 module.exports = function (fastify, opts, done) {
     fastify.get('/', async (request, reply) => {
-        return reply.sendFile('octashibe/brief.html');
-    });
-
-    fastify.get('/about', async (request, reply) => {
-        return reply.sendFile('octashibe/about.html');
+        return reply.sendFile('octashibe/index.html');
     });
 
     fastify.get('/maintenance', async (request, reply) => {

@@ -39,15 +39,11 @@ server.register(require('@fastify/view'), {
 });
 
 // ** Define routes ** \\
-// Because we're on L39 and we have yet to do anything proper.
+// Because we're on L42 and we have yet to do anything proper.
 
 // Import the links redirect
 server.register(require('./routers/links.js'), { prefix: '/links' });
 server.register(require('./routers/links.js'), { prefix: '/l' });
-
-// Import the Octashibe Redesign router
-server.register(require('./routers/octashibe'), { prefix: '/octashibe' });
-server.register(require('./routers/octashibe'), { prefix: '/os' });
 
 // Import the blog router
 server.register(require('./routers/blog'), { prefix: '/blog' });
@@ -65,30 +61,8 @@ server.addHook('preHandler', async (request, reply) => {
 }
 );
 
-// Route for serving index.html
-server.get('/', async (request, reply) => {
-    return reply.sendFile('index.html');
-});
-
-// Route for serving mostly the /info embed, which redirects to root if the user is not a bot
-server.get('/info', async (request, reply) => {
-    if (request.headers['user-agent'].toLowerCase().includes('bot')) {
-        return reply.sendFile('info.html');
-    } else {
-        return reply.redirect('/');
-    }
-
-});
-
-// Route for about.html
-server.get('/about', async (request, reply) => {
-    return reply.sendFile('about.html');
-});
-
-// Route for dms.html
-server.get('/dms', async (request, reply) => {
-    return reply.sendFile('dms.html');
-});
+// Main routes
+server.register(require('./routers/octashibe'), { prefix: '/' });
 
 // Robots.txt
 server.get('/robots.txt', async (request, reply) => {
