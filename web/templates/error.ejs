@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #16161D;">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>kernel panic</title>
+        <link rel="icon" href="/public/art/panic.png">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <!-- Bulma -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+        <!-- Icons -->
+        <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet"/>
+        <!-- OpenProps -->
+        <link rel="stylesheet" href="https://unpkg.com/open-props">
+    </head>
+    <body>
+        <image src="/public/art/panic.png" alt="Kalani Akamai (Robyn's red-panda fursona) standing on it's hind legs, scared." class="image is-128x128"></image>
+        <p class="has-text-white">kernel panic: not syncing: attempted to kill init!</p>
+        <p class="has-text-white">status code <%= statusCode %> <%= statusCodeText %></p>
+        <p class="has-text-white"><%= error %></p>
+        <button class="button is-danger" onclick="window.history.back()">Back to safety!</button>
+    </body>
+</html>

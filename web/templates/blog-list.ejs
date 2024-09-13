@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html style="background-color: #16161D;" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Robyn</title>
+        <link rel="icon" href="/public/art/wah_parade.png">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <!-- Bulma -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+        <!-- Icons -->
+        <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet"/>
+        <!-- OpenProps -->
+        <link rel="stylesheet" href="https://unpkg.com/open-props">
+        <link rel="stylesheet" href="https://unpkg.com/open-props/masks.edges.min.css">
+    </head>
+    <body>
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title has-text-white">Robyn</h1>
+                    <h2 class="subtitle has-text-white">The red panda's blog.</h2>
+                    <div class="buttons has-addons">
+                        <a href="/" class="button is-primary is-outlined">
+                            <span class="icon">
+                                <i class="lni lni-arrow-left"></i>
+                            </span>
+                            <span>Home</span>
+                        </a>
+                        <a href="/blog/new" class="button is-primary is-outlined">
+                            <span class="icon">
+                                <i class="lni lni-plus"></i>
+                            </span>
+                            <span>New Post</span>
+                        </a>
+                        <button class="button is-info is-outlined">
+                            <span class="icon">
+                                <i class="lni lni-information"></i>
+                            </span>
+                            <span>Post Count: <%= posts.length %></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <div class="posts">
+                <% for (const post of posts) { %>
+                <div class="card shadow light my-6">
+                    <div class="card-header">
+                        <h2 class="card-header-title"><%= post.friendly %></h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="content">
+                            <p><%= post.summary %><br><%= post.readTime %> <%= post.pluralNoun %> read time.</p>
+                            <!-- Tags -->
+                            <div class="tags">
+                                <% for (const tag of post.tags) { %>
+                                    <span class="tag is-info"><%= tag %></span>
+                                <% } %>
+                           </div>
+                        </div>
+                        <p><time datetime="<%= post.date %>"><%= post.date %></time> - <%= post.author %></p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/blog/<%= post.date %>" class="card-footer-item">Read More</a>
+                        <a href="#" class="card-footer-item" id="copy-<%= post.date %>">Copy URL</a>
+                    </div>
+                </div>
+                <% } %>
+                <div class="card my-6">
+                    <div class="card-header">
+                        <h2 class="card-header-title">You've reached the end!</h2>
+                    </div>
+                </div>
+            </div>
+    </body>
+    <style>
+        .shadow {
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
+        }
+        .notification {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            animation: var(--animation-slide-in-left);
+        }
+        .light {
+            background-color: rgb(240, 240, 240);
+        }
+    </style>
+    <script>
+        document.querySelectorAll('.card-footer-item').forEach((item) => {
+            if (!item.id.startsWith('copy-')) return;
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const id = e.target.id.split('-').slice(1).join('-');
+                const url = `${window.location.origin}/blog/${id}`;
+                navigator.clipboard.writeText(url);
+                // Show a toast
+                const toast = document.createElement('div');
+                toast.classList.add('notification', 'is-info', 'is-light', 'is-shadowless');
+                toast.innerHTML = `Copied URL to clipboard: ${url}`;
+                const progress = document.createElement('progress');
+                progress.classList.add('progress', 'is-small', 'is-info', 'is-light');
+                progress.value = 0;
+                toast.appendChild(progress);
+                document.body.appendChild(toast);
+                // Remove the toast after 3 seconds with the progress bar decreasing
+                let i = 0;
+                const interval = setInterval(() => {
+                    i += 0.005;
+                    progress.value = i;
+                    if (i >= 1) {
+                        clearInterval(interval);
+                        toast.style.animation = 'var(--animation-slide-out-right)';
+                        setTimeout(() => {
+                            document.body.removeChild(toast);
+                        }, 500);
+                    }
+                }, 30);
+            });
+        });
+    </script>
+</html>

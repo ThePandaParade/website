@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= title %> - Robyn/ThePandaParade</title>
+        <link rel="icon" href="<%= icon %>">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <!-- Bulma -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+        <!-- Icons -->
+        <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet"/>
+        <!-- OpenProps -->
+        <link rel="stylesheet" href="https://unpkg.com/open-props">
+        <link rel="stylesheet" href="https://unpkg.com/open-props/masks.edges.min.css">
+    </head>
+    <body class="drip-right">
+        <a href="." class="button is-link is-rounded is-small is-responsive mx-2 my-2">
+            <span class="icon">
+                <i class="lni lni-arrow-left"></i>
+            </span>
+            <span>Back to main page</span>
+        </a>
+        <div class="container is-fluid drip-bottom">
+            <section class="section">
+                <section class="hero">
+                    <div class="hero-body">
+                        <div class="container">
+                            <div class="columns">
+                                <div class="column is-1">
+                                    <figure class="image is-128x128">
+                                        <img src="<%= icon %>">
+                                    </figure>
+                                </div>
+                                <div class="column mx-6">
+                                    <h1 class="title has-text-white">
+                                        <%= title %>
+                                        <% if (status == 'indev') { %>
+                                            <span class="tag is-warning">In Development</span>
+                                        <% } else if (status == 'active') { %>
+                                            <span class="tag is-success">Active</span>
+                                        <% } else if (status == 'paused') { %>
+                                            <span class="tag is-info">Paused</span>
+                                        <% } else if (status == 'eol') { %>
+                                            <span class="tag is-danger">Deprecated/End Of Life</span>
+                                        <% } %>
+                                    </h1>
+                                    <h2 class="subtitle has-text-white">
+                                        <%- brief %>
+                                        <% if (license) { %>
+                                            <div class="tags has-addons">
+                                                <span class="tag is-dark">License</span>
+                                                <span class="tag is-light"><%= license %></span>
+                                            </div>
+                                        <% } %>
+                                    </h2>
+                                    <!-- Tags -->
+                                    <div class="tags">
+                                        <% tags.forEach(tag => { %>
+                                            <span class="tag is-info"><%= tag %></span>
+                                        <% }); %>
+                                        <% if (tags.length == 0) { %>
+                                            <span class="tag is-info">No tags</span>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="columns">
+                    <div class="column is-5">
+                        <figure class="image">
+                            <img src="<%= image %>" style="width: 720px; height: 512px;" >
+                        </figure>
+                    </div>
+                    <div class="column">
+                        <% if (status == 'indev') { %>
+                            <h2 class="has-text-warning has-text-weight-bold is-size-4">In Development! Everything may not be finalised, have bugs, or cause corruption! Use at risk.</h2>
+                        <% } else if (status == 'eol') { %>
+                            <h2 class="has-text-danger has-text-weight-bold is-size-4">This project is no longer maintained. Downloading is not advised unless you know what you are doing.</h2>
+                        <% } else if (status == 'paused') { %>
+                            <h2 class="has-text-info has-text-weight-bold is-size-4">This project is paused. Downloading is not advised unless you know what you are doing.</h2>
+                        <% } %>
+                        <h3 class="has-text-white"><%- description %></h3>
+                        <div class="buttons are-medium my-4">
+                            <a class="button is-responsive is-dark" href="<%= link %>">
+                                <span class="icon">
+                                    <i class="lni lni-cloud-download"></i>
+                                </span>
+                                <span><%= downloadButtonText %></span>
+                            </a>
+                            <a class="button s-responsive is-dark" href="<%= source %>">
+                                <span class="icon">
+                                    <i class="lni lni-github"></i>
+                                </span>
+                                <span>View Source</span>
+                            </a>
+                        </div>
+                </div>
+            </section>
+        </div>
+        <footer>
+            <div class="container pb-3">
+                <div class="content has-text-centered has-text-white">
+                    <p>
+                        The(Wah/Panda)Parade 2024. Website under the MIT License. Contribute on <a href="/l/contribute">GitHub</a>.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </body>
+    <style>
+        html {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: black;
+            background-image: '/public/art/branding-overlay.png';
+            background-repeat: repeat;
+        }
+        .drip-right {
+            background-color: #3d005c;
+            mask: var(--mask-edge-drip-right);
+            -webkit-mask: var(--mask-edge-drip-right);
+        }
+        .drip-bottom {
+            background-color: #3d005c;
+            mask: var(--mask-edge-drip-bottom);
+            -webkit-mask: var(--mask-edge-drip-bottom);
+        }
+    </style>
+</html>

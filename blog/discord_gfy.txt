@@ -1,0 +1,82 @@
+Discord. Its' a company, an app, and a song by The Living Tombstone.<br>
+It's been a solid 7 months since my last post, and I am fully aware of that. I've mostly been busy
+touring the US Southwest and rewriting the entire damn website (if that wasn't obvious already, I mean, look at it).<br>
+
+However, I have also been busy with dealing with a harassment campaign from a certain individual. I won't name names, but this ties into the main point of this post.<br>
+To catch you up to speed, on 27-08-2024 my Discord account was flagged for "communication abuse". Now this alone is highly unusual, as I have never been one to
+harass or abuse anyone on the platform. I have always been a person to not throw slurs or get involved in pointless drama. However, Discord decided to strike my account
+down to a point where I couldn't DM people, marking my account as "suspicious".<br>
+The following day, I wake up to find my account terminated facing deletion. I was in shock. I had been using Discord since 2018, and I had never had any issues with
+the ToS or community guildlines. As well as that, Discord did not provide any email or reason as to why my account was terminated. I was left in the dark.
+I had to contact a friend of mine who interns at Discord for any plausible reason as to why my account was terminated. They told me that it was due to "communication
+abuse" and that they couldn't provide any more information. Hence, I was left to the one place I could go - Discord's page of doom and gloom - the Trust and Safety
+contact form.<br>
+I had to wait 2 days for a response, and when I got one, it was a generic response. I was told that my account wasn't going to be reinstated as they "couldn't verify
+my identity from my email", still not stating *why* I was terminated. Another day passed. At this point, they were providing bot responses, always copy and pasting
+from the same script, never providing any real information. Which well, isn't surprising from a company that has decided to start giving passionate head to 
+try and become a publicly owned company.<br>
+Day 10. Support hasn't responded in the past week now. My account was now on it's final day. 06-09-2024. I had given up. I had lost all hope in recovering my account
+that I had owned for 6 years. Later that day, the account was deleted. All traces of my account were gone.<br><br>
+
+Great, now you're caught up to speed. Now, let's talk about the leading reason as to why my account got striked in the first place. A whistleblower (a mutual friend
+of mine and the individual who harassed me) came forward and told me that the individual had mass reported my account for "harassment". Now, I would've thought
+that Discord would've seen that the reports were false, but no. They decided to terminate my account without any real investigation. And I mean hey, I can't say I'm
+too surprised from a company that <a href="https://www.theverge.com/2024/1/11/24034705/discord-layoffs-17-percent-employees">laid off 17% of their staff</a> despite
+having <a href="https://www.businessofapps.com/data/discord-statistics/">a huge surplus of income</a> from their, frankly, forceful Nitro subscription service.
+I mean seriously, they're trying to become a publicly owned company, and they're treating their users like this? Do they  expect to think they'll survive in the long run? 
+I mean probably, Wall Street is full of idiots who'll invest in anything that has a pulse, especially a company born and bred in Silicon Valley thats "hip with the kids" 
+and has a huge cash surplus. At the time of writing as well, their <a href="https://www.glassdoor.co.uk/Reviews/Discord-Reviews-E910317.htm">employee reviews</a> are
+in the gutter. Crunching staff to burn-out, toxic work environments, abuse from management, the list goes on. And yet, they still lead the market in terms of
+communication platforms. It's a shame, really. </p>
+<figure>
+    <img src="/public/static/blog/2024-09-07/Glassdoor.png"></img>
+    <figcaption class="has-text-centered">Discord's Glassdoor reviews as of 06-09-2024. P.S, Glassdoor please add a dark mode its' 22:59 my retnas hurt.</figcaption>
+</figure> <p>
+But, I digress. Obviously toxic work environments are a standard in the tech industry (looking at you, Amazon), but it's a shame to see a company that
+didn't start off as a corporate entity turn into one. I mean, Discord started off as for gamers to just chat and have fun, and now it's turned into a cesspool
+of corporate greed and abuse. The memes of Discord not giving a shit about moderation unless the user is under 13 really seem to be reality lately, and its saddening.
+At the time of writing as well, the Discord Datamining community recently discovered their plans to lower the free file capacity limit back down to 8MB from 25MB.<br>
+Eight. Megabytes. That is barely enough to send a screenshot in 1080p. Which brings me back to the forcefulness of Nitro. Sure, you can argue "but Robyn, you use
+Telegram, they shove their subscription service down your throat as well." But at least I can upload an entire damn screenshot without paying 10 dollars of my 
+hard-earned cash to a company that feels like they force it for their own gain. Their reason for this downsize is laughable as well - with staff indirectly
+confirming its' "too costly to run the storage".<br>
+For context, <br>
+ - Telegram: 2GB free, 4GB paid (5US$)<br>
+ - Signal: Undisclosed, 200MB according to Reddit.<br>
+ - Matrix: Depends per federation, often 100MB under Cloudflare.<br>
+And Discord, a company that has a huge surplus of income, is very much double the size of Matrix and Signal, and okay sure they're not as big as Telegram, however
+Telegram is mostly used by the Russian and Middle Eastern communities, and provides a lot more security and privacy than Discord does. And yet, Discord is the one
+who downscales for "cost reasons". Now, let's try and do the math here.<br>
+Discord is hosted using Google Cloud Platform. For the sake of consistency, let's presume they host on us-west2 in Los Angeles. The cost of storage on GCP is 0.023 dollars
+per GB. And now lets use <a href="https://www.statista.com/statistics/1349341/discord-messages-sent-per-day/">Statista's</a> 2022 data of 4 billion messages sent per day.
+Now, let's presume that 1 in every 10 messages sent has an 8MB file attached to it. That's 400 million files sent per day. Multiplying 8MB by 400 million gives us 3.2TB
+of data sent per day. Multiplying that by 0.023 gives us 9 200 dollars per day. Now, let's multiply that by 30. That gives us 276 000 dollars per month. Equalling to
+3.3 million dollars per year. Now if we do the same for 25MB, we get 8.25 million dollars per year. They are saving 5 million dollars per year by downscaling the file
+size limit, with a... 100 million dollar surplus. And they're telling me that it's "too costly to run the storage"? I call bullshit. And again, Signal, a company
+that is smaller than Discord, has a 200MB limit. And they're not complaining about "costs". Hell, Signal is funded by donations solely, and yet they can afford to
+run a 200MB limit.<br>
+Next up, the upselling of Nitro. I mean, I get it, you need to make money. Servers aren't free. I know that all too well. But the way Discord is doing it is just... 
+wrong. I don't think restricting users from sending files that aren't just two pixels or limiting users from using their own emotes unless they pay 10 dollars a month
+is the way to go. Like hell, custom app icons? Custom app themes? Both can be sorted by just, installing a modified client. And yet, they're trying to sell it as an
+exclusive feature. Another thing that bugs me is the fact you need Nitro to upload a banner to your profile. A banner. A simple image that can be uploaded to any
+website. And yet, Discord is trying to sell it as a feature. When they added pronouns to profiles, I was genuienly surprised that they didn't make it a Nitro feature.
+If they can make a banner a Nitro feature, they can almost certainly profit off people's identities. Well, <a href="https://lifehacker.com/tech/discord-data-sold-to-ai-and-law-enforcement">
+not like that hasn't happened before</a>, but then again that also wasn't directly Discord. Then again, Discord also doesn't delete your data when you delete a message,
+channel, or server. And with their recent bullshit "Clyde AI" that trains off messages sent on Discord, I wouldn't be surprised if they're selling intrusive levels of
+data to the highest bidder. Again, I am fully aware that this is the tech industry, and that this is standard practice (hi Facebook and Google), but Discord isn't
+a megacorporation. It's a company that started off as a small project by a few people, and only had a huge spike due to the 2020 Coronavirus pandemic. And yet, they're
+adapting the same practices as the big greedy corporations.<br>
+There's also plenty of videos on YouTube that go into detail about Discord's moderation and their.. concerning, blind eye for certain communities. I don't know how
+much I can mention or if it's even safe to mention without being sued, however I don't think I should be giving my money to a company that is willing to turn a blind
+eye to servers promoting teenage dating and... Well, connect the dots. The fact that they're willing to turn a blind eye to that, but terminate my account for
+"harassment" is just concerning at best. The best video I can find at the moment is <a href="https://www.youtube.com/watch?v=MnpgNn9hhhc">this one</a> by
+Canadian YouTuber "No Text To Speech", who covers Discord on their channel. I highly recommend you check it out.</br>
+I honestly don't know what to do at this point. It amazes me how a company that started off to combat Skype and Teamspeak has turned into a worse version of both.
+And to clarify - this post isn't to try and force you to stop using Discord. I may use Arch but I'm not a Linux elitist. The sole purpose of this post is to inform
+you of the practices that Discord has been doing lately. I'm not saying you should stop using Discord, but I am saying that you should be aware and act on your own
+judgement. Hell, people still use Twitter despite... Melon Husk (you know who I'm talking about). And to further clarify, this post is not with intention to defame
+Discord. Please don't sue me for defamation. You can't arbitrate me, I'm in the UK. <em>There's a fun ponder, does arbitration allow for international cases? I'm not
+a lawyer, I didn't even know what arbitration was until Discord enforced it on their US users.</em>.<br>
+At the end of the day, Discord lost me. I'm not going to be using their service anymore. Call me petty, I ain't letting a company have my data and money when they
+can't even provide a decent service. Will me leaving Discord make a difference? No. Will me leaving Discord make me feel better morally? Yes. Anyway, it's 00:28,
+and I'm out of iced tea. I'm going to bed. Goodnight.

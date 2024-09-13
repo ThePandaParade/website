@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #16161D;">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>~/<%= post.long.replace("txt","html") %></title>
+        <link rel="icon" href="/public/art/wah_parade.png">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@300&display=swap" rel="stylesheet">
+        <!-- Bulma -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+        <!-- Icons -->
+        <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet"/>
+        <!-- OpenProps -->
+        <link rel="stylesheet" href="https://unpkg.com/open-props">
+        <link rel="stylesheet" href="https://unpkg.com/open-props/masks.edges.min.css">
+    </head>
+    <body>
+        <section class="hero">
+            <div class="hero-body">
+                <h1 class="title has-text-white">~/<%= post.long.replace("txt","html") %></h1>
+                <h2 class="subtitle has-text-white"><%= post.summary %></h2>
+                <p class="has-text-white">Posted on <%= post.date %></p>
+                <p class="has-text-white">Written by <%= post.author %></p>
+                <button class="button is-info is-outlined" onclick="window.history.back()">
+                    <span class="icon">
+                        <i class="lni lni-arrow-left"></i>
+                    </span>
+                    <span>Back</span>
+                </button>
+            </div>
+        </section>
+        <div id="content" class="container has-text-white my-3">
+            <p><%- long %></p>
+        </div>
+    </body>
+    <style>
+        body {
+            font-family: 'SUSE', sans-serif;
+            font-weight: 300;
+        }
+    </style>
+</html>
