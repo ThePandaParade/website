@@ -34,7 +34,7 @@ server.register(require('@fastify/view'), {
   engine: {
     ejs: require('ejs')
   },
-  root: path.join(__dirname, "web", "octashibe", "templates"),
+  root: path.join(__dirname, "web", "templates"),
   production: process.env.PRODUCTION
 });
 

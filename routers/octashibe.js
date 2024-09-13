@@ -5,11 +5,11 @@
 
 module.exports = function (fastify, opts, done) {
     fastify.get('/', async (request, reply) => {
-        return reply.sendFile('octashibe/index.html');
+        return reply.sendFile('index.html');
     });
 
     fastify.get('/maintenance', async (request, reply) => {
-        return reply.sendFile('octashibe/maintenance.html');
+        return reply.sendFile('maintenance.html');
     });
 
     // Brand spankin new error page and functionality

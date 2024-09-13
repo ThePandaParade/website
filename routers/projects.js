@@ -3,7 +3,7 @@ function markdownToHTML(text) {
     .replace(/\*\*(.*?)\*\*/g, "<strong class='has-text-white'>$1</strong>")
     .replace(/\*(.*?)\*/g, "<em>$1</em>")
     .replace(/\n/g, "<br>")
-    .replace(/\[(.*?)\]\((.*?)\)/g, "<a href='$2'>$1</a>")
+    .replace(/\[(.*?)\]\((.*?)\)/g, "<a href='$2' target='_blank'>$1</a>")
     .toString("UTF-8");
 }
 const projects = [
@@ -18,11 +18,7 @@ const projects = [
             "to be as lightweight as possible, with no new blocks or entities added. All recipes are visible with (J/R)EI, with",
             "EMI support if JEI is installed (akin to base Create).",
             "\n",
-            "As listing *every* recipe would be a bit much, here's recipes for the new items:",
-            "\n - **Blank Mould**: (Smoke) 1x Clayball",
-            "\n - **Star Mould**: (Deploy) 1x Nether Star on 1x Blank Mould",
-            "\n - **Gem Mould**: (Deploy) 1x Nether Ingot on 1x Blank Mould",
-            "\n - (more added in future updates)",
+            "All current recipes are listed [here](https://github.com/ThePandaParade/CreateAutomative/blob/main/RecipesAndTodo.md)",
             "\n\n",
             "The mod uses Architechtury for its API, and supports:",
             "\n - NeoForge 1.20.1",

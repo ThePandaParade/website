@@ -1,134 +1,124 @@
 <!DOCTYPE html>
-<html style="overflow-y:auto" class="dark is-overlay" id="html">
-    <head>
-        <meta charset="utf-8">
-        <title>Robyn-Dawn</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Icon -->
-        <link rel="icon" href="/public/art/wah_parade.png">
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Tilt+Neon&display=swap" rel="stylesheet">
-        <!-- Import local files -->
-        <link rel="stylesheet" href="/public/static/terminal.css">
-        <!-- <script src="/terminal.js"></script> --> <!-- This is currently unused -->
-        <!-- Bulma -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
-        <!-- Meta (for embeds )-->
-        <meta property="og:title" content="Robyn-Dawn">
-        <meta property="og:description" content="// they/them (non-binary, pansexual)
-// Full-time Student & Fullstack Engineer
-// 11th May 🎂
-// Home of ThePandaParade / TheWahParade and projects.
-// See here for information and blog posts.">
-        <meta property="og:image" content="/public/art/comfy-noise">
-        <meta property="og:url" content="https://pandapa.ws/">
-        <meta property="og:site_name" content="Robyn-Dawn">
-        <meta property="og:type" content="website">
-        <meta property="og:locale" content="en_GB">
-        <meta name="theme-color" content="#7071E8">
-        <!-- Confetti -->
-        <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
-        <!-- OpenProps -->
-        <link rel="stylesheet" type="text/css" src="https://unpkg.com/open-props@1.7.4/open-props.min.css"></link>
-        <!-- Modern Normalize -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ress@4.0.0/dist/ress.min.css">
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robyn</title>
+    <link rel="icon" href="/public/art/wah_parade.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <!-- Icons -->
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet"/>
+    <!-- OpenProps -->
+    <link rel="stylesheet" href="https://unpkg.com/open-props">
+</head>
+<body>
+    <section id="hero" class="hero is-fullheight is-bold">
+<!--         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#5000ca" d="M0,192L60,176C120,160,240,128,360,138.7C480,149,600,203,720,213.3C840,224,960,192,1080,160C1200,128,1320,96,1380,80L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z" fill-opacity="0.9"></path>
+            <path d="M0,192L60,176C120,160,240,128,360,138.7C480,149,600,203,720,213.3C840,224,960,192,1080,160C1200,128,1320,96,1380,80L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" fill-opacity="0.8" fill="#5000ca"></path>
+        </svg> -->
+        <div class="hero-body light">
+            <div class="container has-text-centered light">
+                <!-- Icon -->
+                <figure class="image is-128x128 is-inline-block">
+                    <img src="/public/art/RobPfp.png" alt="Robyn Logo">
+                </figure>
 
-    <body class="dark" id="body">
-        <div id="birthday-easter-egg" class="mx-2 my-2 has-background-dark">
-            <h1 class="has-text-white is-size-4 title py-1" id="birthday-easter-egg-text">Happy Birthday Me! 🎉</h1>
-        </div>
-        <section class="hero">
-            <div class="hero-body">
-                <div class="container">
-                    <div class="columns my-2 mx-2">
-                        <figure class="image column is-1 mt-1">
-                            <img src="/public/art/RobPfp.png" id="avatar">
-                        </figure>
-                        <!-- Vertically align with the center of the image -->
-                        <div class="column is-11 mt-2">
-                            <h1 class="title is-3 pastel-purple terminal">Robyn-Dawn</h1>
-                            <h2 class="subtitle is-5 pastel-blue terminal">Full-Time Student & Fullstack Engineer</h2>
-                            <p class="is-7 pastel-blue terminal" id="pronouns">they/them (non-binary / pansexual)</p>
-                            <p id="time-text" class="pastel-blue terminal">It is currently 00:00.</p>
-                        </div>
-                    </div>
+                <h1 class="title is-1 light">Robyn</h1>
+                <h2 class="subtitle is-3 light">(they/them)</h2>
+                <h3 id="time" class="title is-4 light">⏱️ Europe/London</h3>
+                <!-- <h3 id="spotify" class="subtitle is-4 light">🎵 Inkwell Dreams - Kyle Allen Music (00:00 - 03:32)</h3> -->
+                <!-- Disabled above for now as I'm not too sure if I fuck with it or not-->
+                <p class="subtitle is-3 light">Self-hosted dreams of the future, and red pandas. 🌠</p>
+                <!-- All elements should be in-line -->
+                <div class="buttons is-centered are-medium">
+                    <a href="blog" class="button is-info is-outlined">Blog</a>
+                    <a href="projects" class="button is-info is-outlined">Projects</a>
                 </div>
-        </section>
-
-        <div class="columns my-2 mx-2">
-            <div class="column is-12" style="text-align:center;">
-                <p class="title is-4 pastel-purple terminal" id="posts">Posts</p>
-                <p class="subtitle is-6 has-text-white">
-                    <a class="pastel-blue px-1 terminal" href="/blog/2024-02-29/one_month_on.html">2024-02-29: The Exodus: One Month Later</a> <br>
-                    <a class="pastel-blue px-1 terminal" href="/blog/2024-01-11/exodus.html">2024-01-11: The Exodus: My Transition towards Linux</a>
-                </p>
+                <div class="buttons is-centered light" id="socials">
+                    <!-- Socials -->
+                    <a href="/l/twitch" class="is-primary light is-large">
+                        <span class="icon">
+                            <i class="lni lni-twitch"></i>
+                        </span>
+                    </a>
+                    <a href="/l/telegram" class="is-primary light is-large">
+                        <span class="icon">
+                            <i class="lni lni-telegram-original"></i>
+                        </span>
+                    </a>
+                    <a href="/l/steam" class="is-primary light is-large">
+                        <span class="icon">
+                            <i class="lni lni-steam"></i>
+                        </span>
+                    </a>
+                    <a href="/l/github" class="is-primary light is-large">
+                        <span class="icon">
+                            <i class="lni lni-github"></i>
+                        </span>
+                    </a> 
             </div>
         </div>
+</body>
 
-<!--         <div class="columns my-2 mx-2">
-            <div class="column is-12" style="text-align:center;">
-                <p class="title is-4 pastel-purple terminal" id="about-me">About Me</p>
-                <p class="subtitle is-6 pastel-blue terminal">
-                    You can learn more about me on <a href="about" class="pastel-green">my about page.</a>
-                </p>
-            </div>
-        </div> --> <!-- Currently just leads to lorem ipsum until I actually make it. Which I can not be bothered to. -->
+<style>
+    body {
+        font-family: 'Noto Sans', sans-serif;
+        background-color: rgba(80,0,202,0.75);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%235d008a' d='M0 192L60 176C120 160 240 128 360 138.7C480 149 600 203 720 213.3C840 224 960 192 1080 160C1200 128 1320 96 1380 80L1440 64L1440 0L1380 0C1320 0 1200 0 1080 0C960 0 840 0 720 0C600 0 480 0 360 0C240 0 120 0 60 0L0 0Z' fill-opacity='0.9'%3E%3C/path%3E%3Cpath d='M0 192L60 176C120 160 240 128 360 138.7C480 149 600 203 720 213.3C840 224 960 192 1080 160C1200 128 1320 96 1380 80L1440 64L1440 320L1380 320C1320 320 1200 320 1080 320C960 320 840 320 720 320C600 320 480 320 360 320C240 320 120 320 60 320L0 320Z' fill-opacity='0.8' fill='%237400ac'%3E%3C/path%3E%3C/svg%3E");
+        background-repeat: repeat-x;
+        background-size: cover;
+        background-blend-mode: overlay;
+        background-attachment: fixed;
+    }
+    .hero-body * {
+        animation: fadeIn 1s;
+    }
+    .light {
+        color: rgb(220, 220, 220);
+    }
+    a:hover {
+        animation:
+            var(--animation-scale-up) forwards,
+            var(--animation-fade-in);
+        animation-timing-function: var(--ease-elastic-in-1);
+        animation-duration: 1s;
+        color: var(--blue-5);
+    }
+    a:active {
+        animation:
+            var(--animation-fade-out) forwards,
+            var(--animation-slide-out-down);
+        animation-timing-function: var(--ease-elastic-in-out-1);
+        animation-duration: 1s;
+    }
+</style>
 
-        <div class="columns my-2 mx-2">
-            <div class="column is-12" style="text-align:center;">
-                <p class="title is-4 pastel-purple terminal" id="projects">Projects</p>
-                <p class="subtitle is-6 has-text-white">
-                    <!--<a class="pastel-blue px-1 terminal" href="/projects/copperclaw.html">Copperclaw</a>-->
-                    <p class="pastel-blue px-1 terminal">None at the moment</p>
-                </p>
-            </div>
-        </div>
-
-        <div class="columns my-2 mx-2">
-            <div class="column is-12" style="text-align:center;">
-                <p class="title is-4 pastel-purple terminal" id="socials">Socials</p>
-                <p class="subtitle is-6 pastel-blue terminal">
-                    <a class="pastel-blue px-1 terminal" href="https://mastodon.pandapa.ws/@me" target="_blank">Mastodon: @me@pandapa.ws</a> <br>
-                    <a class="pastel-blue px-1 terminal" href="https://t.me/robynsspacestation" target="_blank">Telegram: @robynsspacestation</a> <br>
-                    <a class="pastel-blue px-1 terminal" href="https://github.com/ThePandaParade" target="_blank">GitHub: @ThePandaParade</a> <br>
-                    <a class="pastel-blue px-1 terminal" href="https://throne.com/ThePandaParade" target="_blank">Throne: @ThePandaParade</a> <br>
-                    <a class="pastel-blue px-1 terminal" href="https://bsky.app/profile/pandapa.ws" target="_blank">Bluesky: @pandapa.ws</a> <br>
-                </p>
-            </div>
-        </div>
-    <script>
-        // On my birthday, confetti will fall from the top of the page.
-        // Get the current date. If it is the 11th May, then continue.
-        var date = new Date();
-        //var date = new Date("2025-05-11"); // For testing purposes.
-        if (date.getDate() == 11 && date.getMonth() == 4) {
-        //if (true) {
-            const confetti = new JSConfetti();
-            confetti.addConfetti({
-                confettiNumber: 1000,
-                confettiRadius: 10,
-            });
-        }
-        else {
-            // Delete the div if it is not my birthday.
-            document.getElementById("birthday-easter-egg").remove();
-        }
-
-        // Get the current time and display it on the page.
-        // We need to get the time in Europe/London timezone.
-        // We also need to display it in 24-hour format, and including the currently active timezone.
-        var options = { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', hour12: false };
-        var time = new Date().toLocaleTimeString('en-GB', options);
-        document.getElementById("time-text").innerHTML = "It is currently " + time + " in London.";
-
-        // Now make this update every ten seconds.
-        setInterval(function() {
-            var time = new Date().toLocaleTimeString('en-GB', options);
-            document.getElementById("time-text").innerHTML = "It is currently " + time + " in London.";
-        }, 10000);
-    </script>
+<!-- <script>
+    // Depending on the user's preference, change the theme to dark mode
+    // Or if the time is past 6pm, change the theme to dark mode
+    const now = new Date();
+    const hours = now.getHours();
+    const hero = document.getElementById('hero');
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches || hours >= 18 || hours < 6) {
+        hero.classList.add('is-dark');
+        hero.classList.remove('is-primary');
+    }
+</script> -->
+<script>
+    // Get the time and display it
+    const now = new Date();
+    const time = document.getElementById('time');
+    time.innerHTML = `⏱️ ${now.toLocaleTimeString('en-GB', {timeZone: 'Europe/London'})}｜Europe/London`;
+    // Update the time every second
+    setInterval(() => {
+        const now = new Date();
+        time.innerHTML = `⏱️ ${now.toLocaleTimeString('en-GB', {timeZone: 'Europe/London'})}｜Europe/London`;
+    }, 1000);
+</script>
 </html>
