@@ -16,6 +16,13 @@
         <!-- OpenProps -->
         <link rel="stylesheet" href="https://unpkg.com/open-props">
         <link rel="stylesheet" href="https://unpkg.com/open-props/masks.edges.min.css">
+        <!-- Embed stuff -->
+        <meta property="og:title" content="~/<%= post.long.replace("txt","html") %>">
+        <!-- For the description, display the first 300 characters. -->
+        <meta property="og:description" content="<%= post.summary.substring(0, 300) %>...">
+        <meta property="og:image" content="https://pandapa.ws/public/art/wah_parade.png">
+        <meta property="og:url" content="https://pandapa.ws/blog/<%= post.date %>">
+        <meta name="theme-color" content="#660000" data-react-helmet="true">
     </head>
     <body>
         <section class="hero">

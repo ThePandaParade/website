@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><%= title %> - Robyn/ThePandaParade</title>
+        <title><%= title %></title>
         <link rel="icon" href="<%= icon %>">
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +16,12 @@
         <!-- OpenProps -->
         <link rel="stylesheet" href="https://unpkg.com/open-props">
         <link rel="stylesheet" href="https://unpkg.com/open-props/masks.edges.min.css">
+        <!-- Embed stuff -->
+        <meta property="og:title" content="<%= title %>">
+        <meta property="og:description" content="<%= brief %>">
+        <meta property="og:image" content="<%= image %>">
+        <meta property="og:url" content="<%= link %>">
+        <meta name="theme-color" content="#660000" data-react-helmet="true">
     </head>
     <body class="drip-right">
         <a href="." class="button is-link is-rounded is-small is-responsive mx-2 my-2">
